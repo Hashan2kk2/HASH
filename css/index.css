@@ -1,0 +1,125 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+* {
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    background-image: url(../img/index-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.content-bx {
+    background-color: #393e46;
+    opacity: 0.95;
+    border-radius: 10px;
+}
+
+.logo {
+    background-image: url(../img/log_white_50px.png);
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.brand-name {
+    align-items: center;
+}
+
+.brand-name h3 {
+    color: #f7f7f7;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.heading h3 {
+    font-size: 30px;
+    color: #f7f7f7;
+    font-weight: bold;
+}
+
+.input-wrap {
+    position: relative;
+    height: 37px;
+    margin-bottom: 32px;
+    /* background-color: rebeccapurple; */
+}
+
+.input-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border: 2px solid #929aab;
+    padding: 9px;
+    font-size: 0.95rem;
+    color: #929aab;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+.inlabel {
+    font-size: 0.95rem;
+    color: #bbb;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.input-field.active {
+    border-color: #929aab;
+}
+
+.input-field.active+.inlabel {
+    font-size: 15px;
+    top: -10px;
+}
+
+label {
+    color: #f7f7f7;
+}
+
+label span {
+    color: #A170FF;
+    cursor: pointer;
+}
+
+.reigister-btn {
+    border: none;
+    outline: none;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #5800FF;
+    transition: 0.4s;
+}
+
+.reigister-btn:hover {
+    background-color: #4400c2;
+}
+
+.login span {
+    color: #f7f7f7;
+}
+
+.login a {
+    color: #A170FF;
+    cursor: pointer;
+    text-decoration: none;
+}

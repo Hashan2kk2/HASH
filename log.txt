@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: #34588e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pepsi {
+  border-radius: 50%;
+  background: #34588e;
+  height: 300px;
+  width: 300px;
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.pepsi::after {
+  border-radius: 50%;
+  background: #da473c;
+  height: 500px;
+  width: 550px;
+  content: "";
+  position: absolute;
+  top: -275px;
+  left: -300px;
+  z-index: 2;
+}
+
+.pepsi::before {
+  border-radius: 25%;
+  background-color: #fff;
+  height: 400px;
+  width: 500px;
+  content: "";
+  position: absolute;
+  top: -170px;
+  left: -240px;
+  transform: rotate(-15deg);
+  z-index: 1;
+}

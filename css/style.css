@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: "BebasBold";
+    src: url(../fonts/BebasNeue\ Bold.ttf);
+}
+
+@font-face {
+    font-family: "BebasBook";
+    src: url(../fonts/BebasNeue\ Book.ttf);
+}
+
+@font-face {
+    font-family: "BebasLight";
+    src: url(../fonts/BebasNeue\ Light.ttf);
+}
+
+@font-face {
+    font-family: "BebasRegular";
+    src: url(../fonts/BebasNeue\ Regular.ttf);
+}
+
+@font-face {
+    font-family: "Monologue";
+    src: url(../fonts/Monologue.ttf);
+}
+
+.ut-main {
+    background-color: #ffffff;
+}
+
+.ut-main a i {
+    color: #315afc;
+}
+
+* {
+    transition: 0.4s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.upperbar-tools a {
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #315afc;
+    font-weight: 400;
+}
+
+.upperbar-tools a:hover {
+    color: #315afc;
+}
+
+.navbtn {
+    background-color: white;
+    border: none;
+    height: 35px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.navbtn i {
+    color: #315afc;
+}
+
+.badge {
+    color: #315afc;
+    font-size: 20px;
+}
+
+.search-div {
+    background-color: #eaefef;
+}
+
+.search {
+    border-radius: 8px;
+}
+
+.search:focus {
+    border-color: #ffffff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.034)
+}
+
+.input-group-append span {
+    background-color: #466af9;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.input-group-append span:hover {
+    background-color: #315afc;
+}
+
+.input-group-append span:active {
+    background-color: #395be0;
+}
+
+.navBar {
+    height: 65px;
+    margin-top: -1px;
+    padding: 0 30px;
+    background-color: rgb(255, 180, 17);
+}
+
+.navbar-vertical.navbar-light .navbar-nav .nav-link {
+    padding: 8px 30px;
+    border-bottom: 1px solid #EDF1FF;
+}
+
+
+/* bottom nav */
+
+.bottom-nav {
+    background-color: #ffffff;
+    height: 48px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-nav:hover {
+    background-color: rgb(32, 32, 32);
+}
+
+.bottom-nav a {
+    margin: 10px 10px;
+    width: 100px;
+    color: #315afc;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 8px;
+}
+
+.bottom-nav a:hover {
+    transition: 0.4s ease;
+    color: #ffffff;
+    background-color: #315afc;
+}
+
+
+/* bottom nav */
+
+
+/* carousel */
+
+.carousel-1 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.486)), url(../img/carouselImg1.png);
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-2 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.486)), url(../img/carouselImg2.png);
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-3 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.486)), url(../img/carouselImg3.png);
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-caption {
+    top: 100;
+    transform: translateY(0%);
+}
+
+.carousel-caption h5 {
+    font-family: Monologue;
+    font-size: 100px;
+}
+
+.carousel-btn {
+    padding: 5px;
+    margin: 0 10px;
+    border: none;
+    background-color: #315afc;
+    color: #eaefef;
+    border-radius: 6px;
+}
+
+.carousel-btn:hover {
+    color: rgb(158, 183, 238);
+}
+
+
+/* carousel */
+
+
+/* popular right now */
+
+.popular-right-now {
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 4px;
+}
+
+.popular-categories {
+    background-color: #315afc;
+    border-radius: 4px;
+    color: #EDF1FF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.links:hover {
+    background-color: #eaefef;
+    color: #315afc;
+    cursor: pointer;
+}
+
+
+/* popular right now */
+
+
+/* home categories */
+
+.cat {
+    background-color: rgb(219, 225, 231);
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.category-1 {
+    background-image: url(../img/shoe.png);
+}
+
+.category-2 {
+    background-image: url(../img/tshirt.png);
+}
+
+.category-3 {
+    background-image: url(../img/backpack.png);
+}
+
+.category-4 {
+    background-image: url(../img/watch.png);
+}
+
+.product-text .col-12 {
+    color: #ffffff;
+    background-color: rgb(22, 22, 22);
+}
+
+.product-text .col-12:hover {
+    color: #315afc;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* home categories */
+
+
+/* selection */
+
+.selection {
+    background-color: #dbdbdb;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.selection:hover {
+    background-color: #315afc;
+    color: #ffffff;
+}
+
+.active {
+    background-color: #315afc;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* selection */
+
+
+/* product card */
+
+.price {
+    background-color: #315afc;
+}
+
+
+/* product card */
+
+
+/* Footer */
+
+.footer {
+    background-color: #000000;
+    margin-top: 50px;
+}
+
+.logo {
+    background-image: url(../img/Asset\ 8.png);
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 30px;
+}
+
+.social-links i {
+    font-size: 25px;
+    color: #e6e6e6;
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.sec2 h4,
+.sec3 h4 {
+    color: white;
+}
+
+.sec2 a,
+.sec3 a {
+    display: block;
+    text-decoration: none;
+    color: #315afc;
+}
+
+.copyright {
+    background-color: #000000;
+    border-top: 2px solid white;
+}
+
+
+/* Footer */
+
+
+/* Forgot Password */
+
+.bg-img {
+    background-image: url(../img/forgot_password.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 30px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+.forgotPassword .inputGroup label,
+.inputGroup input {
+    display: block;
+}
+
+.inputGroup input {
+    padding: 5px 10px;
+    margin: 20px 0;
+    border-radius: 4 px;
+}
+
+.inputGroup button {
+    border: none;
+    outline: none;
+    background-color: #315afc;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+}
+
+.inputGroup button:hover {
+    background-color: #395be0;
+}
+
+
+/* Forgot Password */
