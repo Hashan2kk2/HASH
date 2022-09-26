@@ -394,3 +394,46 @@
 
 
 /* Forgot Password */
+
+
+/* Verification Code page */
+
+.verification-logo {
+    background-image: url(../img/Asset\ 7.png);
+    height: 30px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.verification-img {
+    background-image: url(../img/code.png);
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.verification-input input {
+    width: 400px;
+    margin: 20px 0;
+    height: 30px;
+    padding: 10px;
+}
+
+.verification-input button {
+    width: 200px;
+    border: none;
+    outline: none;
+    background-color: #315afc;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+}
+
+.verification-input button:hover {
+    background-color: #395be0;
+}
+
+
+/* Verification Code page */

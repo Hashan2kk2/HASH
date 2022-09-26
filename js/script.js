@@ -152,7 +152,24 @@ function passwordReset() {
     r.onreadystatechange = function() {
         if (r.readyState == 4) {
             let text = r.responseText;
-            alert(text);
+            if (text == "success") {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: ("Verification Code Sent to Your Entered Email Address"),
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: (text),
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                email.value = "";
+            }
         }
     }
 
