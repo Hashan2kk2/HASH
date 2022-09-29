@@ -421,7 +421,8 @@
     padding: 10px;
 }
 
-.verification-input button {
+.verification-input button,
+.resetBtn {
     width: 200px;
     border: none;
     outline: none;
@@ -431,8 +432,16 @@
     color: white;
 }
 
-.verification-input button:hover {
+.verification-input button:hover,
+.resetBtn:hover {
     background-color: #395be0;
+}
+
+.newPassword {
+    width: 400px;
+    margin: 20px 0;
+    height: 30px;
+    padding: 10px;
 }
 
 

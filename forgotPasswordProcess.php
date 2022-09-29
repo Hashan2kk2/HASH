@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "connection.php";
 require "PHPMailer-master/src/Exception.php";
 require "PHPMailer-master/src/PHPMailer.php";
@@ -10,8 +12,11 @@ use PHPMailer\PHPMailer\Exception;
 
 
 if (isset($_GET["e"])) {
-  $e = $_GET["e"];
 
+  $e = $_GET["e"];
+  
+  $_SESSION["resetEmail"] = $e;
+  
   if (empty($e)) {
     echo "Please Enter Your Email Address";
   } else {
