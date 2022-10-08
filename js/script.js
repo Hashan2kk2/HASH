@@ -100,6 +100,23 @@ function userReg() {
 // USER LOGIN
 // ====================================
 
+function loginPage() {
+    window.location = "index.php";
+}
+
+function signout() {
+    let r = new XMLHttpRequest();
+    r.onreadystatechange = function() {
+        if (r.readyState == 4) {
+            // let t = r.responseText;
+            // alert(t);
+            location.reload();
+        }
+    }
+    r.open("POST", "signoutProcess.php", true);
+    r.send();
+}
+
 function userlog() {
     let loginEmail = document.getElementById("loginEmail");
     let loginPassword = document.getElementById("loginPassword");

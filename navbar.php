@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +35,21 @@
         <div class="row ut-main py-2 px-xl-5">
             <div class="col-lg-6 text-center text-lg-start">
                 <div class="d-inline-flex align-items-center upperbar-tools">
-                    <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto User Account">Hello Hashan</a>
+                    <!-- <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto User Account">Hello Hashan</a> -->
+                    <?php
+                    if (isset($_SESSION["userEmail"])) {
+                        $user = $_SESSION["userEmail"]["first_name"];
+                    ?>
+                        <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto User Account">Hello <?php echo $user; ?></a>
+                        <span class="text-muted px-2">|</span>
+                        <a class="" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Log Out" onclick="signout();">Logout</a>
+                    <?php
+                    } else {
+                    ?>
+                        <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Log In" onclick="loginPage();">Log In</a>
+                    <?php
+                    }
+                    ?>
                     <span class="text-muted px-2">|</span>
                     <a class="" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Help">Help</a>
                     <span class="text-muted px-2">|</span>
@@ -60,24 +79,24 @@
 
         <!-- visible logo in medim size screens -->
         <!-- <div class="container-fluid"> -->
-            <div class="row d-lg-none logo-md-bx">
-                <div class="col-12 d-flex align-items-center justify-content-center py-3">
-                    <img src="img/Asset 7.png" alt="logo" width="100">
-                </div>
+        <div class="row d-lg-none logo-md-bx">
+            <div class="col-12 d-flex align-items-center justify-content-center py-3">
+                <img src="img/Asset 7.png" alt="logo" width="100">
             </div>
+        </div>
         <!-- </div> -->
         <!-- visible logo in medim size screens -->
 
         <!-- bottom bar -->
         <!-- <div class="container-fluid"> -->
-            <div class="row">
-                <div class="col-12 bottom-nav">
-                    <a href="#">Home</a>
-                    <a href="#">Shop</a>
-                    <a href="#">Featured</a>
-                    <a href="#">Pricing</a>
-                </div>
+        <div class="row">
+            <div class="col-12 bottom-nav">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Featured</a>
+                <a href="#">Pricing</a>
             </div>
+        </div>
         <!-- </div> -->
         <!-- bottom bar -->
 

@@ -1,9 +1,19 @@
 <?php
 
+session_start();
+
 require "connection.php";
 
 $email = $_POST["email"];
 $password = $_POST["password"];
+
+$rs = Database::search("SELECT * FROM `user` WHERE `email`='".$email."' AND `password`='".$password."'");
+$n = $rs->num_rows;
+
+if($n == 1){
+    $d = $rs->fetch_assoc();
+    $_SESSION["userEmail"] = $d;
+}
 
 // echo $email;
 // echo $password;
