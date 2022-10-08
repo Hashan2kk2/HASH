@@ -182,24 +182,39 @@ function passwordReset() {
 // verification code timer
 let countdowntimer = document.getElementById("countdowntimer");
 
-function verificationTimer() {
-    let count = 10;
-    let start = setInterval(c, 1000);
 
-    function c() {
-        if (count == 0) {
-            countdowntimer.innerHTML = "Time Out";
-            clearInterval(start);
-            window.location = "forgotPassword.php";
-        } else {
-            count--;
-            countdowntimer.innerHTML = count;
-        }
+// function verificationTimer() {
+//     let start = setInterval(c, 1000);
+//     let count = 181;
+
+//     function c() {
+//         if (count == 0) {
+//             countdowntimer.innerHTML = "Time Out";
+//             clearInterval(start);
+//             window.location = "forgotPassword.php";
+//         } else {
+//             count--;
+//             countdowntimer.innerHTML = count;
+//         }
+//     }
+
+//     function trop() {
+//         clearInterval(start);
+//     }
+// }
+
+let start = setInterval(timer, 1000);
+let count = 180;
+
+function timer() {
+    if (count == 0) {
+        countdowntimer.innerHTML = "Time Out";
+        clearInterval(start);
+        window.location = "forgotPassword.php";
+    } else {
+        count--;
+        countdowntimer.innerHTML = count;
     }
-}
-
-function stop() {
-    clearInterval(start);
 }
 
 function resetPassword() {
@@ -219,7 +234,7 @@ function resetPassword() {
         if (r.readyState == 4) {
             var t = r.responseText;
             if (t == "succeess") {
-                stop();
+                clearInterval(start);
                 vcCodeBox.classList.toggle("d-none");
                 newPwBox.classList.toggle("d-none");
             } else {
@@ -232,30 +247,71 @@ function resetPassword() {
     r.send(formData);
 }
 
-function switchPwType1() {
-    let icon = document.getElementById("togglePassword1");
-    let pw = document.getElementById("password1");
-    icon.classList.toggle("fa-eye-slash");
-    icon.classList.toggle("fa-eye");
 
-    if (pw.type === "password") {
-        pw.type = "text";
+let icon1 = document.getElementById("togglePassword1");
+let pw1 = document.getElementById("password1");
+let icon2 = document.getElementById("togglePassword2");
+let pw2 = document.getElementById("password2");
+
+function switchPwType1() {
+    icon1.classList.toggle("fa-eye-slash");
+    icon1.classList.toggle("fa-eye");
+
+    if (pw1.type === "password") {
+        pw1.type = "text";
     } else {
-        pw.type = "password";
+        pw1.type = "password";
     }
 }
 
 function switchPwType2() {
-    let icon = document.getElementById("togglePassword2");
-    let pw = document.getElementById("password2");
-    icon.classList.toggle("fa-eye-slash");
-    icon.classList.toggle("fa-eye");
+    icon2.classList.toggle("fa-eye-slash");
+    icon2.classList.toggle("fa-eye");
 
-    if (pw.type === "password") {
-        pw.type = "text";
+    if (pw2.type === "password") {
+        pw2.type = "text";
     } else {
-        pw.type = "password";
+        pw2.type = "password";
     }
+}
+
+function setNewPassword() {
+
+    var minNumberOfChars = 7;
+    var maxNumberOfChars = 14;
+
+    if (pw1.value == "") {
+        alert("Please Enter Your New Password");
+    } else if (pw2.value == "") {
+        alert("Please Enter Your Confirmation Password");
+    } else if (pw1.value.length < minNumberOfChars || pw1.value.length > maxNumberOfChars) {
+        alert("Please Enter your password with minimum 8 characters and maximum 50 characters");
+    } else if (pw1.value != pw2.value) {
+        alert("Passwords aren't maching");
+    } else {
+
+        var r = new XMLHttpRequest();
+        var f = new FormData();
+
+
+        f.append("p1", pw1.value);
+        f.append("p2", pw2.value);
+
+        r.onreadystatechange = function() {
+            if (r.readyState == 4) {
+                let t = r.responseText;
+                alert(t)
+                if (t == "Password Updated Success") {
+                    window.location = "index.php";
+                }
+            }
+        }
+        r.open("POST", "setNewPassword.php", true);
+        r.send(f);
+
+    }
+
+
 }
 
 

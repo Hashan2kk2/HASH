@@ -20,7 +20,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onpageshow="verificationTimer();">
+<body>
     <?php
     echo "Email Address is '" . $_SESSION["resetEmail"] . "'";
     ?>
@@ -50,16 +50,16 @@ session_start();
                 <div class="row d-none" id="newPasswordInput">
                     <div class="col-12 text-center">
                         <p class="">
-                            <label for="password" class="text-end">New Password:</label>
-                            <input type="password" name="password" id="password1" />
+                            <label for="password" class="text-start ms-1">New Password:</label>
+                            <input type="password" name="password" id="password1" class="ms-5" />
                             <i class="fa fa-eye-slash" id="togglePassword1" style="cursor: pointer;" onclick="switchPwType1();"></i>
                         </p>
                         <p class="">
-                            <label for="password" class="text-end">Confirm Password:</label>
-                            <input type="password" name="password" id="password2" />
+                            <label for="password" class="text-start">Confirm Password:</label>
+                            <input type="password" name="password" id="password2" class="ms-2" />
                             <i class="fa fa-eye-slash" id="togglePassword2" style="cursor: pointer;" onclick="switchPwType2();"></i>
                         </p>
-                        <button class="resetBtn" onclick="resetPassword();">Reset Password</button>
+                        <button class="resetBtn" onclick="setNewPassword();">Reset Password</button>
 
                     </div>
                 </div>

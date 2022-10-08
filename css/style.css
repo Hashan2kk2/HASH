@@ -444,5 +444,9 @@
     padding: 10px;
 }
 
+#newPasswordInput input {
+    width: 200px;
+}
+
 
 /* Verification Code page */
