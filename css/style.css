@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
 @font-face {
     font-family: "BebasBold";
     src: url(../fonts/BebasNeue\ Bold.ttf);
@@ -450,3 +451,116 @@
 
 
 /* Verification Code page */
+
+
+/* User Profile */
+
+.topbar-boxes {
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-btn {
+    height: 33px;
+    width: 84px;
+    border-radius: 8px;
+    background-color: #315afc;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+}
+
+.user-prof-logo img {
+    height: 22px;
+}
+
+.prof-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    border: #315afc 2px solid;
+    cursor: pointer;
+}
+
+.user-prof-page-content {
+    background-color: #F5F7FB;
+    padding: 5px;
+}
+
+.up-box-1 {
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.profile-pic-bg {
+    background-image: url(../img/profilepic-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.tab-pane {
+    cursor: pointer;
+}
+
+.prof-img {
+    margin: auto;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: #EDF1FF;
+}
+
+.activity-bx {
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+
+.tab-pages h1 {
+    color: #7d7d7d;
+
+}
+
+.tab-pages i {
+    margin: 50px 0;
+    font-size: 100px;
+    color: #7d7d7d;
+    display: flex;
+    justify-content: center;
+}
+
+.order-history-card:hover {
+    -webkit-box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.3);
+}
+
+.history-order-product-img {
+    border-radius: 3px 0 0 3px;
+    background-color: #F5F7FB;
+    border-right: 1px solid #7d7d7d;
+}
+
+.order-card-detail-box {
+    background-color: #F5F7FB;
+    border-radius: 0 3px 3px 0;
+}
+
+.order-card-detail-box h2 {
+    color: #000000;
+}
+
+.history-order-product-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+}
+
+
+/* User Profile */

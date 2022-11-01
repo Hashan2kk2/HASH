@@ -11,40 +11,31 @@
 }
 
 .background {
-    background-image: url(../img/index-bg.jpg);
+    background-image: url(../img/loginbg.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
 }
 
 .content-bx {
-    background-color: #393e46;
+    background-color: #ffffff;
     opacity: 0.95;
     border-radius: 10px;
 }
 
 .logo {
-    background-image: url(../img/log_white_50px.png);
-    height: 20px;
+    background-image: url(../img/Asset\ 7.png);
+    height: 30px;
+    margin: 20px 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.brand-name {
-    align-items: center;
-}
-
-.brand-name h3 {
-    color: #f7f7f7;
-    font-size: 20px;
-    font-weight: 400;
+    background-size:contain;
 }
 
 .heading h3 {
     font-size: 30px;
-    color: #f7f7f7;
-    font-weight: bold;
+    color: #1c1c1c;
+    font-weight: bolder;
 }
 
 .input-wrap {
@@ -95,7 +86,7 @@ label {
 }
 
 label span {
-    color: #A170FF;
+    color: #315afc;
     cursor: pointer;
 }
 
@@ -106,12 +97,12 @@ label span {
     border-radius: 10px;
     font-weight: bold;
     color: white;
-    background-color: #5800FF;
+    background-color: #315afc;
     transition: 0.4s;
 }
 
 .reigister-btn:hover {
-    background-color: #4400c2;
+    background-color: #315afc;
 }
 
 .login span {
@@ -119,7 +110,7 @@ label span {
 }
 
 .login a {
-    color: #A170FF;
+    color: #315afc;
     cursor: pointer;
     text-decoration: none;
 }

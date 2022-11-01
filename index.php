@@ -11,10 +11,10 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorldWide</title>
+    <title>Hash</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="img/FavIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/Asset 7.png" type="image/x-icon">
 
     <!-- Bootstrap CDN -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,14 +31,11 @@ session_start();
                 <div class="row  d-flex d-none vh-100" id="userReg">
                     <div class="col-11 col-lg-8 col-xl-6 p-3 align-self-center m-auto content-bx">
                         <div class="row">
-                            <div class="col-2 col-lg-1 logo"></div>
-                            <div class="col-10 brand-name">
-                                <h3>World Wide</h3>
-                            </div>
+                            <div class="col-12 logo"></div>
                         </div>
                         <div class="row mt-2">
                             <div class=" col-12 text-center text-capitalize heading">
-                                <h3 class="fw-bold">Set Up You <br> World wide account</h3>
+                                <h3 class="fw-bold">Set Up Your HASH Account</h3>
                             </div>
                         </div>
                         <div class="row mt-3 ">
@@ -106,8 +103,8 @@ session_start();
 
                             <div class="check text-center col-12 mt-1">
                                 <input type="checkbox" class="me-3" id="agreement" name="agreement" id="tac">
-                                <label for="agreement"> I agree with WorldWide's <span>Terms & Privacy
-                                        Policy</span></label </div>
+                                <label for="agreement" class="text-dark"> I agree with Hash's <span>Terms & Privacy
+                                        Policy</span></label>
                             </div>
 
                             <div class="col-12 mt-3">
@@ -115,7 +112,7 @@ session_start();
                             </div>
 
                             <div class="col-12 mt-3 text-center login">
-                                <span>Already have an Account? <a href="#" onclick="toggleView();">Log in</a> </span>
+                                <span class="text-dark">Already have an Account? <a href="#" onclick="toggleView();">Log in</a> </span>
                             </div>
                         </div>
                     </div>
@@ -125,14 +122,11 @@ session_start();
                 <div class="row d-flex vh-100" id="userLog">
                     <div class="col-11 col-md-8 col-lg-6 col-xl-4 p-3 align-self-center m-auto content-bx">
                         <div class="row">
-                            <div class="col-2 col-lg-1 logo"></div>
-                            <div class="col-10 brand-name">
-                                <h3 class="fw-bold">World Wide</h3>
-                            </div>
+                            <div class="col-12 logo"></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-12 text-center text-capitalize heading">
-                                <h3>Log in to Your <br>Account</h3>
+                                <h3>Log in to Your  Account</h3>
                             </div>
                         </div>
                         <div class="row mt-3 ">
@@ -154,10 +148,10 @@ session_start();
                             </div>
 
                             <div class="col-12 mt-3 text-center login">
-                                <span>Forgot Password? <a href="#" onclick="forgotPassword();">Click Here</a> </span>
+                                <span class="text-dark">Forgot Password? <a href="#" onclick="forgotPassword();">Click Here</a> </span>
                             </div>
                             <div class="col-12 mt-3 text-center login">
-                                <span>Don't Have an Account? <a href="#" onclick="toggleView();">Register Now</a> </span>
+                                <span class="text-dark">Don't Have an Account? <a href="#" onclick="toggleView();">Register Now</a> </span>
                             </div>
                         </div>
                     </div>

@@ -166,7 +166,7 @@
             </div>
             <div class="col-7 col-sm-5 col-lg-3">
                 <div class="p-2 border bg-light">
-                    <img src="img/shoe.png" alt="shoe" class="img-fluid">
+                    <img src="img/jacket.png" alt="shoe" class="img-fluid">
                 </div>
                 <div class="row p-2">
                     <div class="col-10">
@@ -187,7 +187,7 @@
             </div>
             <div class="col-7 col-sm-5 col-lg-3">
                 <div class="p-2 border bg-light">
-                    <img src="img/shoe.png" alt="shoe" class="img-fluid">
+                    <img src="img/miBand.png" alt="shoe" class="img-fluid">
                 </div>
                 <div class="row p-2">
                     <div class="col-10">
@@ -208,7 +208,7 @@
             </div>
             <div class="col-7 col-sm-5 col-lg-3">
                 <div class="p-2 border bg-light">
-                    <img src="img/shoe.png" alt="shoe" class="img-fluid">
+                    <img src="img/backpack1.png" alt="shoe" class="img-fluid">
                 </div>
                 <div class="row p-2">
                     <div class="col-10">
