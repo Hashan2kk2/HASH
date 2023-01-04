@@ -57,15 +57,144 @@
                                 <span class="pg-title fs-2 fw-bold text-black-50">Statistics</span>
                                 <div class="row statistics-card-wrapper">
                                     <!-- statistics card -->
-                                    <div class="col statistics-card">
+                                    <!-- users -->
+                                    <div class="col-12 statistics-card">
                                         <div class="card-title">
-                                            Visitors
+                                            Users
                                         </div>
-                                        <div class="card-circ-prog">
-                                            Visitors
+                                        <div class="card-count">
+                                            1025
+                                        </div>
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
                                         </div>
                                     </div>
+                                    <!-- users -->
+                                    <!-- Sales -->
+                                    <div class="col-12 statistics-card">
+                                        <div class="card-title">
+                                            Sales
+                                        </div>
+                                        <div class="card-count">
+                                            1025
+                                        </div>
+
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
+                                        </div>
+                                    </div>
+                                    <!-- Sales -->
+                                    <!-- Pending Deliveries -->
+                                    <div class="col-12 statistics-card">
+                                        <div class="card-title">
+                                            Pending Deliveries
+                                        </div>
+                                        <div class="card-count">
+                                            1025
+                                        </div>
+
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
+                                        </div>
+                                    </div>
+                                    <!-- Pending Deliveries -->
+                                    <!-- Returns -->
+                                    <div class="col-12 statistics-card">
+                                        <div class="card-title">
+                                            Returns
+                                        </div>
+                                        <div class="card-count">
+                                            1025
+                                        </div>
+
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
+                                        </div>
+                                    </div>
+                                    <!-- Returns -->
                                     <!-- statistics card -->
+                                    <!--=================-->
+                                    <!--recent users-->
+                                    <div class="col-12 table-wrapper">
+                                        <div class="my-2">
+                                            <div class="title d-inline">Recent Users</div>
+                                            <div class="count d-inline">1025</div>
+                                        </div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
+                                                    <th scope="col">Email</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
+                                        </div>
+                                    </div>
+                                    <!--recent users-->
+
+                                    <!--Orders-->
+                                    <div class="col-12 mt-3 table-wrapper">
+                                        <div class="my-2">
+                                            <div class="title d-inline">Orders</div>
+                                            <div class="count d-inline">1025</div>
+                                        </div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Product</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="show-more mb-2">
+                                            <button>Show more</button>
+                                        </div>
+                                    </div>
+                                    <!--Orders-->
                                 </div>
                             </div>
                         </div>

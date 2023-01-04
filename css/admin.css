@@ -30,7 +30,8 @@
 /* ADMIN DASHBOARD */
 
 .analytics-bx .statistics-card {
-    background-color: #F5F5F5;
+    margin: 10px 0;
+    background-color: #f2f2f2;
     border-radius: 6px;
     color: #707070;
 }
@@ -40,7 +41,52 @@
     text-align: center;
     font-weight: bold;
     padding: 10px 0;
+    border-bottom: 2px solid;
 }
+
+.analytics-bx .statistics-card .card-count {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.analytics-bx .statistics-card .show-more button,
+.statistics-card-wrapper .table-wrapper .show-more button {
+    color: #ffffff;
+    background-color: #315afc;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.analytics-bx .statistics-card .show-more button:hover {
+    background-color: #3f65ff;
+}
+
+/* tables */
+
+.statistics-card-wrapper .table-wrapper{
+    border: 1px solid #315afc;
+    border-radius: 4px;
+}
+
+.statistics-card-wrapper .table-wrapper .title {
+    color: black;
+    font-size: 20px;
+}
+
+.statistics-card-wrapper .table-wrapper .count {
+    color: white;
+    background-color: #3f65ff;
+    padding: 3px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-left: 110px;
+}
+
+/* tables */
 
 /* ADMIN DASHBOARD */
 /* =============== */
