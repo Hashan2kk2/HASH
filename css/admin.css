@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.login-bg {
+    height: 100vh;
+    background-image: url(../img/loginbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-bx {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.logo {
+    height: 40px;
+    background-image: url(../img/Asset\ 7.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* =============== */
+/* ADMIN DASHBOARD */
+
+.analytics-bx .statistics-card {
+    background-color: #F5F5F5;
+    border-radius: 6px;
+    color: #707070;
+}
+
+.analytics-bx .statistics-card .card-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* ADMIN DASHBOARD */
+/* =============== */
+
+/* =============== */
+/* ADMIN USER PROFILE */
+
+
+
+.aup-greeting-text span {
+    font-size: 20px;
+    color: rgb(32, 32, 32);
+}
+
+.aup-propic-bg {
+    height: 300px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.73)), url(../img/adminCover.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #315afc;
+    border-radius: 10px;
+}
+
+.aup-prof-pic {
+    height: 150px;
+    width: 150px;
+    background-color: #315afc;
+    border-radius: 50%;
+    border: 2px white solid;
+}
+
+
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input+label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-upload .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.aup-cards {
+    background-color: #315afc;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* ADMIN USER PROFILE */
+/* =============== */
