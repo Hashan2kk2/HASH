@@ -52,13 +52,13 @@
                 <div class="row">
                     <div class="col-12 analytics-bx">
 
-                        <div class="row">
-                            <div class="col-12">
-                                <span class="pg-title fs-2 fw-bold text-black-50">Statistics</span>
+                        <div class="row justify-content-around">
+                            <span class="pg-title fs-2 fw-bold text-black-50">Statistics</span>
+                            <div class="col-12 col-lg-4">
                                 <div class="row statistics-card-wrapper">
                                     <!-- statistics card -->
                                     <!-- users -->
-                                    <div class="col-12 statistics-card">
+                                    <div class="col-12 col-md-5 col-lg-12 statistics-card">
                                         <div class="card-title">
                                             Users
                                         </div>
@@ -71,7 +71,7 @@
                                     </div>
                                     <!-- users -->
                                     <!-- Sales -->
-                                    <div class="col-12 statistics-card">
+                                    <div class="col-12 col-md-5 col-lg-12 statistics-card">
                                         <div class="card-title">
                                             Sales
                                         </div>
@@ -85,7 +85,7 @@
                                     </div>
                                     <!-- Sales -->
                                     <!-- Pending Deliveries -->
-                                    <div class="col-12 statistics-card">
+                                    <div class="col-12 col-md-5 col-lg-12 statistics-card">
                                         <div class="card-title">
                                             Pending Deliveries
                                         </div>
@@ -99,7 +99,7 @@
                                     </div>
                                     <!-- Pending Deliveries -->
                                     <!-- Returns -->
-                                    <div class="col-12 statistics-card">
+                                    <div class="col-12 col-md-5 col-lg-12 statistics-card">
                                         <div class="card-title">
                                             Returns
                                         </div>
@@ -113,88 +113,345 @@
                                     </div>
                                     <!-- Returns -->
                                     <!-- statistics card -->
-                                    <!--=================-->
-                                    <!--recent users-->
-                                    <div class="col-12 table-wrapper">
-                                        <div class="my-2">
-                                            <div class="title d-inline">Recent Users</div>
-                                            <div class="count d-inline">1025</div>
-                                        </div>
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">First Name</th>
-                                                    <th scope="col">Last Name</th>
-                                                    <th scope="col">Email</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td colspan="2">Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="show-more mb-2">
-                                            <button>Show more</button>
-                                        </div>
-                                    </div>
-                                    <!--recent users-->
+                                </div>
+                            </div>
 
-                                    <!--Orders-->
-                                    <div class="col-12 mt-3 table-wrapper">
-                                        <div class="my-2">
-                                            <div class="title d-inline">Orders</div>
-                                            <div class="count d-inline">1025</div>
+                            <div class="col-12 col-lg-4">
+                                <!--=================-->
+                                <!--recent users-->
+                                <div class="col-12 table-wrapper">
+                                    <div class="my-2">
+                                        <div class="title d-inline">Recent Users</div>
+                                        <div class="count d-inline">1025</div>
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="show-more mb-2">
+                                        <button>Show more</button>
+                                    </div>
+                                </div>
+                                <!--recent users-->
+
+                                <!--Orders-->
+                                <div class="col-12 mt-3 table-wrapper">
+                                    <div class="my-2">
+                                        <div class="title d-inline">Orders</div>
+                                        <div class="count d-inline">1025</div>
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="show-more mb-2">
+                                        <button>Show more</button>
+                                    </div>
+                                </div>
+                                <!--Orders-->
+                                <!--Invoices-->
+                                <div class="col-12 mt-3 table-wrapper">
+                                    <div class="my-2">
+                                        <div class="title d-inline">Invoices</div>
+                                        <div class="count d-inline">1025</div>
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="show-more mb-2">
+                                        <button>Show more</button>
+                                    </div>
+                                </div>
+                                <!--Invocies-->
+                            </div>
+
+                            <div class="col-12 mt-4 mt-lg-0 col-lg-4 dashboard-listing">
+                                <div class="row mt-4 mt-lg-0 justify-content-around">
+                                    <div class="col-8 mt-lg-2 title">
+                                        Recent listings
+                                    </div>
+                                    <div class="col-4 text-center manage mt-auto mb-auto">
+                                        <button>Manage</button>
+                                    </div>
+                                    <!-- listing card -->
+                                    <!-- <div class="col-12 listing-card">
+                                        <div class="image">
+                                            <img src="../img/backpack.png" alt="">
                                         </div>
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">Product</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Amount</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td colspan="2">Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="show-more mb-2">
-                                            <button>Show more</button>
+                                        <div></div>
+                                    </div> -->
+                                    <!-- listing card -->
+                                    <!-- listing card -->
+                                    <div class="col-12 col-md-5 col-lg-12 my-1 listing-card">
+                                        <div id="card2" class="image carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="../img/backpack.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="../img/shoe.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="../img/watch.png" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#card2" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#card2" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="listing-details">
+                                            <p class="product-name">Nike Air Force</p>
+                                            <p class="sizes">Sizes</p>
+                                            <p><span>S</span>
+                                                <span>M</span>
+                                                <span>L</span>
+                                                <span>XL</span>
+                                            </p>
+                                            <p class="date-listed">Date Listed</p>
+                                            <p class="date">2020.02.03</p>
+                                        </div>
+                                        <div class="button align-self-end mb-4">
+                                            <button><i class='bx bxs-right-arrow-circle'></i></button>
                                         </div>
                                     </div>
-                                    <!--Orders-->
+                                    <!-- listing card -->
+                                    <!-- listing card -->
+                                    <div class="col-12 col-md-5 m-3 col-lg-12 my-2 listing-card">
+                                        <div id="card2" class="image carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="../img/backpack.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="../img/shoe.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="../img/watch.png" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#card2" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#card2" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="listing-details">
+                                            <p class="product-name">Nike Air Force</p>
+                                            <p class="sizes">Sizes</p>
+                                            <p><span>S</span>
+                                                <span>M</span>
+                                                <span>L</span>
+                                                <span>XL</span>
+                                            </p>
+                                            <p class="date-listed">Date Listed</p>
+                                            <p class="date">2020.02.03</p>
+                                        </div>
+                                        <div class="button align-self-end mb-4">
+                                            <button><i class='bx bxs-right-arrow-circle'></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- listing card -->
+                                    <!-- listing card -->
+                                    <div class="col-12 col-md-5 m-3 col-lg-12 my-2 listing-card">
+                                        <div id="card2" class="image carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="../img/backpack.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="../img/shoe.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="../img/watch.png" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#card2" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#card2" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="listing-details">
+                                            <p class="product-name">Nike Air Force</p>
+                                            <p class="sizes">Sizes</p>
+                                            <p><span>S</span>
+                                                <span>M</span>
+                                                <span>L</span>
+                                                <span>XL</span>
+                                            </p>
+                                            <p class="date-listed">Date Listed</p>
+                                            <p class="date">2020.02.03</p>
+                                        </div>
+                                        <div class="button align-self-end mb-4">
+                                            <button><i class='bx bxs-right-arrow-circle'></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- listing card -->
+                                    <!-- listing card -->
+                                    <div class="col-12 col-md-5 m-3 col-lg-12 my-2 listing-card">
+                                        <div id="card2" class="image carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="../img/backpack.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="../img/shoe.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="../img/watch.png" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#card2" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#card2" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="listing-details">
+                                            <p class="product-name">Nike Air Force</p>
+                                            <p class="sizes">Sizes</p>
+                                            <p><span>S</span>
+                                                <span>M</span>
+                                                <span>L</span>
+                                                <span>XL</span>
+                                            </p>
+                                            <p class="date-listed">Date Listed</p>
+                                            <p class="date">2020.02.03</p>
+                                        </div>
+                                        <div class="button align-self-end mb-4">
+                                            <button><i class='bx bxs-right-arrow-circle'></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- listing card -->
+                                    <!-- listing card -->
+                                    <div class="col-12 col-md-5 mt-1 col-lg-12 listing-card">
+                                        <div id="card2" class="image carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="../img/backpack.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="../img/shoe.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="../img/watch.png" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#card2" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#card2" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="listing-details">
+                                            <p class="product-name">Nike Air Force</p>
+                                            <p class="sizes">Sizes</p>
+                                            <p><span>S</span>
+                                                <span>M</span>
+                                                <span>L</span>
+                                                <span>XL</span>
+                                            </p>
+                                            <p class="date-listed">Date Listed</p>
+                                            <p class="date">2020.02.03</p>
+                                        </div>
+                                        <div class="button align-self-end mb-4">
+                                            <button><i class='bx bxs-right-arrow-circle'></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- listing card -->
                                 </div>
                             </div>
                         </div>

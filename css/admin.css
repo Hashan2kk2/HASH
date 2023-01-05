@@ -29,6 +29,16 @@
 /* =============== */
 /* ADMIN DASHBOARD */
 
+
+.statistics-card-wrapper {
+    margin: 30px 0;
+    padding: 30px 10px;
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    justify-content: space-evenly;
+    border-radius: 8px;
+}
+
 .analytics-bx .statistics-card {
     margin: 10px 0;
     background-color: #f2f2f2;
@@ -50,8 +60,7 @@
     font-weight: bold;
 }
 
-.analytics-bx .statistics-card .show-more button,
-.statistics-card-wrapper .table-wrapper .show-more button {
+.analytics-bx .statistics-card .show-more button {
     color: #ffffff;
     background-color: #315afc;
     padding: 4px 8px;
@@ -66,17 +75,17 @@
 
 /* tables */
 
-.statistics-card-wrapper .table-wrapper{
+.table-wrapper {
     border: 1px solid #315afc;
     border-radius: 4px;
 }
 
-.statistics-card-wrapper .table-wrapper .title {
+.table-wrapper .title {
     color: black;
     font-size: 20px;
 }
 
-.statistics-card-wrapper .table-wrapper .count {
+.table-wrapper .count {
     color: white;
     background-color: #3f65ff;
     padding: 3px 15px;
@@ -86,7 +95,117 @@
     margin-left: 110px;
 }
 
+
+.table-wrapper .show-more button {
+    color: #ffffff;
+    background-color: #315afc;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
 /* tables */
+
+/* recent listings */
+.dashboard-listing {
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.dashboard-listing .title {
+    font-size: 20px;
+    color: black;
+}
+
+.dashboard-listing .manage button{
+    background-color: #315afc;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 25px;
+    padding: 2px 10px;
+}
+
+.dashboard-listing .listing-card {
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-listing .listing-card .image {
+    border-radius: 4px;
+    background-color: #d6d6d6;
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-listing .listing-card .image:hover {
+    transform: scale(1.1);
+}
+
+.dashboard-listing .listing-card .image img {
+    height: 100px;
+}
+
+
+.dashboard-listing .listing-details {
+    margin-left: 15px;
+    border-left: #315afc solid 2px;
+    height: 130px;
+    padding: 3px 15px;
+}
+
+.dashboard-listing .listing-details p {
+    line-height: 7px;
+}
+
+.dashboard-listing .listing-details .product-name {
+    line-height: 15px;
+    font-size: 15;
+    color: black;
+    font-weight: bold;
+}
+
+.dashboard-listing .listing-details .sizes,
+.dashboard-listing .listing-details .date-listed {
+    color: black;
+}
+
+.dashboard-listing .listing-details span,
+.dashboard-listing .listing-details .date {
+    color: #757575;
+}
+
+.dashboard-listing .listing-card .button button {
+    background-color: #315afc;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-listing .listing-card .button button:hover {
+    transform: scale(1.2);
+}
+
+/* recent listings */
 
 /* ADMIN DASHBOARD */
 /* =============== */
