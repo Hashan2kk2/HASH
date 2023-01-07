@@ -207,7 +207,20 @@ function updateAdminPassword() {
     r.onreadystatechange = function () {
         if (r.readyState == 4) {
             let t = r.responseText;
-            Swal.fire(t);
+
+            if (t != "Success") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: t
+                });
+            }else{
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Your Password Changed Successfully'
+                });
+            }
         }
     }
 

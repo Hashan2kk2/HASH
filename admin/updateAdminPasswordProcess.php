@@ -1,8 +1,16 @@
 <?php
 
 session_start();
+require "../connection.php";
 
-$password = $_SESSION["admin"]["password"];
+
+$id = $_SESSION["admin"]["id"];
+$email = $_SESSION["admin"]["email"];
+$rs = Database::search("SELECT * FROM user WHERE id = '" . $id . "' AND email = '" . $email . "'");
+
+$data = $rs->fetch_assoc();
+
+$password = $data["password"];
 
 $oldpw = $_POST["oldPw"];
 $newpw = $_POST["newPw"];
@@ -24,10 +32,12 @@ if (empty($oldpw)) {
     echo "Your Confirmed Password dosen't match with your New Password";
 } else if ($newpw == $oldpw) {
     echo "Please Try Another Password.";
-}else if($oldpw != $password){
+} else if ($oldpw != $password) {
     echo "Your Entered Old Password Dosen't Match with your Actual Old Password";
-}else{
-    Database::iud("UPDATE user SET `password` = '' WHERE `id` = '' AND `password` = '".$newpw."'");
+} else {
+    Database::iud("UPDATE user SET `password` = '" . $newpw . "' WHERE `id` = '" . $id . "' AND `password` = '" . $oldpw . "'");
+
+    echo "Success";
 }
 
 // }
