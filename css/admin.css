@@ -302,7 +302,7 @@
     justify-content: center;
 }
 
-.avatar-preview img{
+.avatar-preview img {
     height: 192px;
 }
 
@@ -346,19 +346,126 @@
     border-radius: 4px;
 }
 
-.aup-details .col-1 .help-icon{
+.aup-details .col-1 .help-icon {
     color: #707070;
     background-color: #ffe3ff;
     padding: 8px;
     border-radius: 4px;
 }
 
-.aup-details .help button{
+.aup-details .help button {
     background-color: #ffe3ff;
 }
 
-#editProfileDetails input{
+#editProfileDetails input {
     padding: 0 10px;
 }
+
 /* ADMIN USER PROFILE */
+/* =============== */
+
+
+/* =============== */
+/* Add Product */
+
+.add-product .pg-title {
+    font-size: 25px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.add-product .pg-description {
+    color: #999CA2;
+    font-weight: 500;
+}
+
+.add-product .overview-addproduct-bar {
+    padding: 13px;
+    border-bottom: 2px solid #999CA2;
+}
+
+.add-product .overview-addproduct-bar button {
+    background-color: white;
+    border: 2px solid white;
+    padding: 8px 18px;
+    margin: 0 20px;
+    border-radius: 8px;
+}
+
+.add-product .overview-addproduct-bar button:hover {
+    border: #315afc 2px solid;
+}
+
+.add-product .search-bar {
+    height: 37px;
+    border-radius: 8px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.add-product .search-bar .input-group-text {
+    outline: 1px solid #707070;
+
+}
+
+.add-product .search-bar .search {
+    width: 85%;
+    outline: 1px solid #707070;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.add-product .products-list {
+    margin-top: 40px;
+}
+
+.add-product .products-list .card-body {
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 0;
+    border: 1px solid;
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 20px;
+}
+
+.add-product .products-list .product-img {
+    background-color: #f4f4f4;
+    top: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 160px;
+}
+
+.add-product .products-list .product-img img{
+    height: 160px;
+}
+
+.add-product .products-list .product-details{
+    padding: 5px 10px;
+}
+
+.add-product .products-list .product-details .product-name{
+    color: black;
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.add-product .products-list .product-details .edit button{
+    width: 40px;
+    height: 40px;
+    background-color: #315afc;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.add-product .products-list .product-details .edit button:hover{
+    transform:  scale(1.1);
+}
+/* Add Product */
 /* =============== */

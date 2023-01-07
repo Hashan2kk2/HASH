@@ -33,7 +33,7 @@
                 <a href="adminUserProfile.php"><span class="fa fa-user"></span> Profile</a>
             </li>
             <li>
-                <a href="product.php"><span class='bx bxs-t-shirt' ></span> Products</a>
+                <a href="addProduct.php"><span class='bx bxs-t-shirt' ></span> Products</a>
             </li>
             <li>
                 <a href="#"><span class='bx bxs-message-dots' ></span> Messages</a>
