@@ -28,7 +28,9 @@ session_start();
 
 <body>
 
-
+<?php 
+require "connection.php";
+?>
 
     <!-- topbar -->
     <div class="container-fluid">
@@ -39,8 +41,12 @@ session_start();
                     <?php
                     if (isset($_SESSION["userEmail"])) {
                         $user = $_SESSION["userEmail"]["first_name"];
+                        $uid = $_SESSION["userEmail"]["id"];
+                        $urs = Database::search("SELECT * FROM `user` WHERE `id` = '".$uid."'");
+                        $n = $urs->num_rows;
+                        $udata = $urs->fetch_assoc();
                     ?>
-                        <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto User Account">Hello <?php echo $user; ?></a>
+                        <a class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto User Account" href="userProfile.php">Hello <?php echo $udata["first_name"]; ?></a>
                         <span class="text-muted px-2">|</span>
                         <a class="" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Log Out" onclick="signout();">Logout</a>
                     <?php

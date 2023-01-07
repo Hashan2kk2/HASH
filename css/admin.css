@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.login-bg {
+    height: 100vh;
+    background-image: url(../img/loginbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-bx {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.logo {
+    height: 40px;
+    background-image: url(../img/Asset\ 7.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* =============== */
+/* ADMIN DASHBOARD */
+
+
+.statistics-card-wrapper {
+    margin: 30px 0;
+    padding: 30px 10px;
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    justify-content: space-evenly;
+    border-radius: 8px;
+}
+
+.analytics-bx .statistics-card {
+    margin: 10px 0;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    color: #707070;
+}
+
+.analytics-bx .statistics-card .card-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 2px solid;
+}
+
+.analytics-bx .statistics-card .card-count {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.analytics-bx .statistics-card .show-more button {
+    color: #ffffff;
+    background-color: #315afc;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.analytics-bx .statistics-card .show-more button:hover {
+    background-color: #3f65ff;
+}
+
+/* tables */
+
+.table-wrapper {
+    border: 1px solid #315afc;
+    border-radius: 4px;
+}
+
+.table-wrapper .title {
+    color: black;
+    font-size: 20px;
+}
+
+.table-wrapper .count {
+    color: white;
+    background-color: #3f65ff;
+    padding: 3px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-left: 110px;
+}
+
+
+.table-wrapper .show-more button {
+    color: #ffffff;
+    background-color: #315afc;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* tables */
+
+/* recent listings */
+.dashboard-listing {
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.dashboard-listing .title {
+    font-size: 20px;
+    color: black;
+}
+
+.dashboard-listing .manage button {
+    background-color: #315afc;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 25px;
+    padding: 2px 10px;
+}
+
+.dashboard-listing .listing-card {
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 25px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-listing .listing-card .image {
+    border-radius: 4px;
+    background-color: #d6d6d6;
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-listing .listing-card .image:hover {
+    transform: scale(1.1);
+}
+
+.dashboard-listing .listing-card .image img {
+    height: 100px;
+}
+
+
+.dashboard-listing .listing-details {
+    margin-left: 15px;
+    border-left: #315afc solid 2px;
+    height: 130px;
+    padding: 3px 15px;
+}
+
+.dashboard-listing .listing-details p {
+    line-height: 7px;
+}
+
+.dashboard-listing .listing-details .product-name {
+    line-height: 15px;
+    font-size: 15;
+    color: black;
+    font-weight: bold;
+}
+
+.dashboard-listing .listing-details .sizes,
+.dashboard-listing .listing-details .date-listed {
+    color: black;
+}
+
+.dashboard-listing .listing-details span,
+.dashboard-listing .listing-details .date {
+    color: #757575;
+}
+
+.dashboard-listing .listing-card .button button {
+    background-color: #315afc;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-listing .listing-card .button button:hover {
+    transform: scale(1.2);
+}
+
+/* recent listings */
+
+/* ADMIN DASHBOARD */
+/* =============== */
+
+/* =============== */
+/* ADMIN USER PROFILE */
+
+
+
+.aup-greeting-text span {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #707070;
+    letter-spacing: 3px;
+}
+
+.aup-propic-bg {
+    height: 300px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.73)), url(../img/adminCover.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #315afc;
+    border-radius: 10px;
+}
+
+.aup-prof-pic {
+    height: 150px;
+    width: 150px;
+    background-color: #315afc;
+    border-radius: 50%;
+    border: 2px white solid;
+}
+
+
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input+label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-preview img{
+    height: 192px;
+}
+
+.avatar-upload .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.aup-details {
+    border-radius: 8px;
+}
+
+.aup-details input {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #c5c5c5;
+    height: 35px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.aup-details .password label {
+    color: #707070;
+    font-size: 20px;
+    background-color: #c6e8f6;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.aup-details .password button {
+    width: 100%;
+    height: 38px;
+    background-color: #c6e8f6;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.aup-details .col-1 .help-icon{
+    color: #707070;
+    background-color: #ffe3ff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.aup-details .help button{
+    background-color: #ffe3ff;
+}
+
+#editProfileDetails input{
+    padding: 0 10px;
+}
+/* ADMIN USER PROFILE */
+/* =============== */
