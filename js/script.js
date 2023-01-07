@@ -517,6 +517,7 @@ function profileImgUpload() {
         var file = this.files[0];
         var url = window.URL.createObjectURL(file);
         view.src = url;
+        console.log(url);
     }
 }
 
