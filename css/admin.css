@@ -544,7 +544,7 @@
 .prod-img-3,
 .prod-img-4 {
     border-radius: 4px;
-    height: 150px;
+    height: 200px;
     border: #315afc 2px dotted;
     overflow: hidden;
     display: flex;
@@ -553,7 +553,8 @@
     margin: 0 2px;
 }
 
-.prod-img-1 img {
+.prod-img-1 img,.prod-img-2 img, .prod-img-3 img,
+.prod-img-4 img {
     height: 200px;
 }
 

@@ -208,17 +208,40 @@
                             <div class="col-8 category">
                                 <label class=" text-black-50 fw-bold d-block" for="category">Category</label>
                                 <select name="category" id="category" class="w-100">
-                                    <option value="0">Trousers</option>
-                                    <option>Sneakers</option>
-                                    <option>Sweaters</option>
+                                    <option value="0">Select Category</option>
+                                    <?php
+                                    $cateRs = Database::search("SELECT * FROM `category`");
+                                    $cateN = $cateRs->num_rows;
+
+                                    for ($i = 0; $i < $cateN; $i++) {
+                                        $cateFa = $cateRs->fetch_assoc();
+                                    ?>
+                                        <option value="<?php echo $cateFa["id"]; ?>"><?php echo $cateFa["name"]; ?></option>
+
+                                    <?php
+                                    }
+
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-4 type">
                                 <label class=" text-black-50 fw-bold d-block" for="type">Type</label>
                                 <select name="type" id="type" class="w-100">
-                                    <option value="0">Men</option>
-                                    <option>Woman</option>
-                                    <option>Kids</option>
+                                    <option value="0">Select Type</option>
+                                    <?php
+
+                                    $typeRs = Database::search("SELECT * FROM `type`");
+                                    $typeN = $typeRs->num_rows;
+
+                                    for ($i = 0; $i < $typeN; $i++) {
+                                        $typeFa = $typeRs->fetch_assoc();
+                                    ?>
+                                        <option value="<?php echo $typeFa["id"]; ?>"><?php echo $typeFa["name"]; ?></option>
+
+                                    <?php
+                                    }
+
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -226,9 +249,19 @@
                             <div class="col-12 brand">
                                 <label class="text-black-50 fw-bold d-block" for="brand">Brand</label>
                                 <select name="type" id="brand" class="w-100">
-                                    <option value="0">Nike</option>
-                                    <option>Adidas</option>
-                                    <option>Rebok</option>
+                                    <option value="0">Select Brand</option>
+                                    <?php
+                                    $brandRs = Database::search("SELECT * FROM `brand`");
+                                    $brandN = $brandRs->num_rows;
+
+                                    for ($i = 0; $i < $brandN; $i++) {
+                                        $brandFa = $brandRs->fetch_assoc();
+                                    ?>
+                                        <option value="<?php echo $brandFa["id"]; ?>"><?php echo $brandFa["name"]; ?></option>
+
+                                    <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -250,42 +283,40 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-1">
-                                        <img src="../img/shoe.png" alt="prodImg" style="z-index: 1;">
+                                        <img src="../img/addImage.svg" alt="prodImg" id="img1Prev">
                                     </div>
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-2 text-center">
-                                        <div class="add-img-text">
-                                            <i class='bx bx-image'></i>
-                                        </div>
+                                        <img src="../img/addImage.svg" alt="prodImg" id="img2Prev">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="row d-flex gx-1">
                                     <div class="col my-2 prod-img-3 text-center">
-                                        <div class="add-img-text">
-                                            <i class='bx bx-image'></i>
-                                        </div>
+                                    <img src="../img/addImage.svg" alt="prodImg" id="img3Prev">
                                     </div>
                                     <div class="col my-2 prod-img-4 text-center">
-                                        <div class="add-img-text">
-                                            <i class='bx bx-image'></i>
-                                        </div>
+                                    <img src="../img/addImage.svg" alt="prodImg" id="img4Prev">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-3 d-flex justify-content-center">
-                                <button class="add-img-btns">+ Image 1</button>
+                                <input type='file' id="pImgUpload1" class="d-none" />
+                                <label for="pImgUpload1" class="add-img-btns" onclick="productImgUpload1();">+ Image 1</label>
                             </div>
                             <div class="col-3 d-flex justify-content-center">
-                                <button class="add-img-btns">+ Image 2</button>
+                                <input type='file' id="pImgUpload2" class="d-none" />
+                                <label for="pImgUpload2" class="add-img-btns" onclick="productImgUpload2();">+ Image 2</label>
                             </div>
                             <div class="col-3 d-flex justify-content-center">
-                                <button class="add-img-btns">+ Image 3</button>
+                                <input type='file' id="pImgUpload3" class="d-none" />
+                                <label for="pImgUpload3" class="add-img-btns" onclick="productImgUpload3();">+ Image 3</label>
                             </div>
                             <div class="col-3 d-flex justify-content-center">
-                                <button class="add-img-btns">+ Image 4</button>
+                                <input type='file' id="pImgUpload4" class="d-none" />
+                                <label for="pImgUpload4" class="add-img-btns" onclick="productImgUpload4();">+ Image 4</label>
                             </div>
                         </div>
                         <div class="row product-img-specs">
@@ -293,19 +324,19 @@
                                 <p>You need to add at least 4 images. Pay attention to the quality of the pictures you add. Comply the Background Color standards. Picture must be in certain dimensions. note that the product shows all the details.</p>
                             </div>
                             <div class="col-12 my-2 col-md-6">
-                                <label class=" text-black-50 fw-bold d-block" for="size">Size</label>
-                                <select name="category" id="size" class="w-100">
-                                    <option value="0">Small</option>
-                                    <option>Medium</option>
-                                    <option>Large</option>
-                                    <option>XL</option>
-                                </select>
+                                <label class=" text-black-50 fw-bold d-block" for="size">Price</label>
+                                <input class="d-block w-100 prod-name" type="text" id="prodPrice">
                             </div>
                             <div class="col-12 my-2 col-md-6">
-                                <label class=" text-black-50 fw-bold d-block" for="size">Size</label>
+                                <label class=" text-black-50 fw-bold d-block" for="size">Delivery Cost</label>
+                                <input class="d-block w-100 prod-name" type="text" id="deliveryCost">
+                            </div>
+                            <div class="col-12 my-2 col-md-6">
+                                <label class=" text-black-50 fw-bold d-block" for="date">Date</label>
                                 <input type="date" name="date" id="date">
                             </div>
-                            <div class="col-12 my-2">
+                            <div class="col-12 my-2 col-md-6">
+                                <label class=" text-black-50 fw-bold d-block"> . </label>
                                 <button class="w-100">Add Product</button>
                             </div>
                         </div>

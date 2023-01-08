@@ -245,3 +245,52 @@ function productOverviewPg() {
 }
 
 // Edit Profile
+
+// add Product
+
+function productImgUpload1() {
+    var img = document.getElementById("pImgUpload1");
+    var view = document.getElementById("img1Prev");
+
+    img.onchange = function () {
+        var file = this.files[0];
+        var url = window.URL.createObjectURL(file);
+        view.src = url;
+        console.log(url);
+    }
+}
+function productImgUpload2() {
+    var img = document.getElementById("pImgUpload2");
+    var view = document.getElementById("img2Prev");
+
+    img.onchange = function () {
+        var file = this.files[0];
+        var url = window.URL.createObjectURL(file);
+        view.src = url;
+        console.log(url);
+    }
+}
+function productImgUpload3() {
+    var img = document.getElementById("pImgUpload3");
+    var view = document.getElementById("img3Prev");
+
+    img.onchange = function () {
+        var file = this.files[0];
+        var url = window.URL.createObjectURL(file);
+        view.src = url;
+        console.log(url);
+    }
+}
+function productImgUpload4() {
+    var img = document.getElementById("pImgUpload4");
+    var view = document.getElementById("img4Prev");
+
+    img.onchange = function () {
+        var file = this.files[0];
+        var url = window.URL.createObjectURL(file);
+        view.src = url;
+        console.log(url);
+    }
+}
+
+// add Product
