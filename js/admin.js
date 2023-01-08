@@ -293,4 +293,82 @@ function productImgUpload4() {
     }
 }
 
+
+function addProduct() {
+    let prodName = document.getElementById("prodName");
+    let category = document.getElementById("category");
+    let type = document.getElementById("type");
+    let brand = document.getElementById("brand");
+    let prodDescription = document.getElementById("prodDescription");
+    let pImgUpload1 = document.getElementById("pImgUpload1");
+    let pImgUpload2 = document.getElementById("pImgUpload2");
+    let pImgUpload3 = document.getElementById("pImgUpload3");
+    let pImgUpload4 = document.getElementById("pImgUpload4");
+    let prodPrice = document.getElementById("prodPrice");
+    let deliveryCost = document.getElementById("deliveryCost");
+    let date = document.getElementById("date");
+    let qty = document.getElementById("prodQty");
+
+    let img1 = document.getElementById("img1Prev");
+    let img2 = document.getElementById("img2Prev");
+    let img3 = document.getElementById("img3Prev");
+    let img4 = document.getElementById("img4Prev");
+
+    let addProdForm = new FormData();
+
+    addProdForm.append("pName", prodName.value);
+    addProdForm.append("pCat", category.value);
+    addProdForm.append("pType", type.value);
+    addProdForm.append("pBrand", brand.value);
+    addProdForm.append("pDesc", prodDescription.value);
+    addProdForm.append("pImg1", pImgUpload1.files[0]);
+    addProdForm.append("pImg2", pImgUpload2.files[0]);
+    addProdForm.append("pImg3", pImgUpload3.files[0]);
+    addProdForm.append("pImg4", pImgUpload4.files[0]);
+    addProdForm.append("pPrice", prodPrice.value);
+    addProdForm.append("pDelCost", deliveryCost.value);
+    addProdForm.append("pDate", date.value);
+    addProdForm.append("prodQty", qty.value);
+
+    let r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+        if (r.readyState == 4) {
+            let text = r.responseText;
+
+            if (text == "OK") {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Product Added Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // window.location = "addProduct.php";
+                prodName.value="";
+                category.value=0;
+                type.value=0;
+                brand.value=0;
+                prodDescription.value="";
+                img1.src="../img/addImage.svg";
+                img2.src="../img/addImage.svg";
+                img3.src="../img/addImage.svg";
+                img4.src="../img/addImage.svg";
+                prodPrice.value="";
+                deliveryCost.value="";
+                qty.value="";
+            } else {
+                Swal.fire(
+                    'Warning',
+                    text,
+                    'question'
+                )
+            }
+        }
+    }
+
+    r.open("POST", "addProductProcess.php", true);
+    r.send(addProdForm);
+
+}
+
 // add Product

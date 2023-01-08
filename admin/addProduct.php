@@ -293,10 +293,10 @@
                             <div class="col-12">
                                 <div class="row d-flex gx-1">
                                     <div class="col my-2 prod-img-3 text-center">
-                                    <img src="../img/addImage.svg" alt="prodImg" id="img3Prev">
+                                        <img src="../img/addImage.svg" alt="prodImg" id="img3Prev">
                                     </div>
                                     <div class="col my-2 prod-img-4 text-center">
-                                    <img src="../img/addImage.svg" alt="prodImg" id="img4Prev">
+                                        <img src="../img/addImage.svg" alt="prodImg" id="img4Prev">
                                     </div>
                                 </div>
                             </div>
@@ -328,16 +328,20 @@
                                 <input class="d-block w-100 prod-name" type="text" id="prodPrice">
                             </div>
                             <div class="col-12 my-2 col-md-6">
-                                <label class=" text-black-50 fw-bold d-block" for="size">Delivery Cost</label>
+                                <label class=" text-black-50 fw-bold d-block" for="deliveryCost">Delivery Cost</label>
                                 <input class="d-block w-100 prod-name" type="text" id="deliveryCost">
+                            </div>
+                            <div class="col-12 my-2 col-md-6">
+                                <label class=" text-black-50 fw-bold d-block" for="qty">Quantity</label>
+                                <input type="text" name="date" id="prodQty">
                             </div>
                             <div class="col-12 my-2 col-md-6">
                                 <label class=" text-black-50 fw-bold d-block" for="date">Date</label>
                                 <input type="date" name="date" id="date">
                             </div>
-                            <div class="col-12 my-2 col-md-6">
-                                <label class=" text-black-50 fw-bold d-block"> . </label>
-                                <button class="w-100">Add Product</button>
+                            <div class="col-12 my-2">
+                                <label class=" text-black-50 fw-bold d-block"></label>
+                                <button class="w-100" onclick="addProduct();">Add Product</button>
                             </div>
                         </div>
                     </div>
