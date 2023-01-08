@@ -440,21 +440,21 @@
     height: 160px;
 }
 
-.add-product .products-list .product-img img{
+.add-product .products-list .product-img img {
     height: 160px;
 }
 
-.add-product .products-list .product-details{
+.add-product .products-list .product-details {
     padding: 5px 10px;
 }
 
-.add-product .products-list .product-details .product-name{
+.add-product .products-list .product-details .product-name {
     color: black;
     font-size: 18px;
     padding-right: 10px;
 }
 
-.add-product .products-list .product-details .edit button{
+.add-product .products-list .product-details .edit button {
     width: 40px;
     height: 40px;
     background-color: #315afc;
@@ -464,8 +464,143 @@
     border-radius: 4px;
 }
 
-.add-product .products-list .product-details .edit button:hover{
-    transform:  scale(1.1);
+.add-product .products-list .product-details .edit button:hover {
+    transform: scale(1.1);
 }
+
+/* pagination */
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #315afc;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+/* pagination */
+
+
+/* add product form */
+.prod-details .prod-name {
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #315afc;
+}
+
+.add-product .category select,
+.add-product .type select,
+.add-product .brand select,
+.add-product .description textarea {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #315afc;
+    background-color: white;
+}
+
+/* add product form */
+/* product img form */
+
+.prod-image-bx {
+    border: #315afc 2px dotted;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.prod-img-1,
+.prod-img-2 {
+    height: 300px;
+    border-radius: 4px;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .prod-img-1,
+    .prod-img-2 {
+        height: 200px;
+        border-radius: 4px;
+    }    
+}
+
+
+.prod-img-3,
+.prod-img-4 {
+    border-radius: 4px;
+    height: 150px;
+    border: #315afc 2px dotted;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+}
+
+.prod-img-3 .add-img-text i,
+.prod-img-4 .add-img-text i {
+    font-size: 25px;
+}
+
+.prod-img-3 .add-img-text p,
+.prod-img-4 .add-img-text p {
+    font-size: 12px;
+}
+
+.prod-img-1 img {
+    height: 200px;
+}
+
+.add-img-text i {
+    font-size: 50px;
+}
+
+.add-img-text p {
+    font-size: 15px;
+    line-height: 10px;
+}
+
+.product-img-specs input,
+.product-img-specs select {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #315afc;
+    background-color: white;
+}
+
+.product-img-specs button {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background-color: #315afc;
+}
+
+.product-img-specs button:hover{
+    transform: scale(1.1);
+}
+/* product img form */
+
 /* Add Product */
 /* =============== */
