@@ -59,8 +59,8 @@
                 <!-- overview addproduct bar -->
                 <div class="row">
                     <div class="col-12 overview-addproduct-bar">
-                        <button>Overview</button>
-                        <button>+ Add Product</button>
+                        <button onclick="productOverviewPg();">Overview</button>
+                        <button onclick="addNewProductPg();">+ Add Product</button>
                     </div>
                 </div>
                 <!-- overview addproduct bar -->
@@ -77,7 +77,7 @@
                 </div>
                 <!-- search bar -->
                 <!-- products list -->
-                <div class="row d-none">
+                <div class="row d-none" id="overviewPg">
                     <div class="col-12 products-list justify-content-center">
                         <div class="row no-gutters gy-0 justify-content-around">
                             <!-- card -->
@@ -194,7 +194,7 @@
                 <!-- overview -->
 
                 <!-- Add product Form -->
-                <div class="row mt-3">
+                <div class="row mt-3 " id="addproductPg">
                     <!-- product details box -->
                     <div class="col-12 col-lg-6 add-product">
                         <div class="row my-3">
@@ -250,13 +250,11 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-1">
-                                        <img src="../img/shoe.png" alt="prodImg">
+                                        <img src="../img/shoe.png" alt="prodImg" style="z-index: 1;">
                                     </div>
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-2 text-center">
                                         <div class="add-img-text">
                                             <i class='bx bx-image'></i>
-                                            <p>Drop your image here, or</p>
-                                            <p>Select <a href="#">Click here</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -266,18 +264,28 @@
                                     <div class="col my-2 prod-img-3 text-center">
                                         <div class="add-img-text">
                                             <i class='bx bx-image'></i>
-                                            <p>Drop your image here, or</p>
-                                            <p>Select <a href="#">Click here</a></p>
                                         </div>
                                     </div>
                                     <div class="col my-2 prod-img-4 text-center">
                                         <div class="add-img-text">
                                             <i class='bx bx-image'></i>
-                                            <p>Drop your image here, or</p>
-                                            <p>Select <a href="#">Click here</a></p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 d-flex justify-content-center">
+                                <button class="add-img-btns">+ Image 1</button>
+                            </div>
+                            <div class="col-3 d-flex justify-content-center">
+                                <button class="add-img-btns">+ Image 2</button>
+                            </div>
+                            <div class="col-3 d-flex justify-content-center">
+                                <button class="add-img-btns">+ Image 3</button>
+                            </div>
+                            <div class="col-3 d-flex justify-content-center">
+                                <button class="add-img-btns">+ Image 4</button>
                             </div>
                         </div>
                         <div class="row product-img-specs">

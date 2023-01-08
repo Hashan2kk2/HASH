@@ -214,7 +214,7 @@ function updateAdminPassword() {
                     title: 'Oops...',
                     text: t
                 });
-            }else{
+            } else {
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -227,4 +227,21 @@ function updateAdminPassword() {
     r.open("POST", "../admin/updateAdminPasswordProcess.php", true);
     r.send(pwForm);
 }
+
+function addNewProductPg() {
+    var overviewPg = document.getElementById("overviewPg");
+    var addproductPg = document.getElementById("addproductPg");
+
+    overviewPg.classList.add("d-none");
+    addproductPg.classList.remove("d-none");
+}
+
+function productOverviewPg() {
+    var overviewPg = document.getElementById("overviewPg");
+    var addproductPg = document.getElementById("addproductPg");
+
+    overviewPg.classList.remove("d-none");
+    addproductPg.classList.add("d-none");
+}
+
 // Edit Profile
