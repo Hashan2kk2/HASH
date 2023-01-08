@@ -1,0 +1,33 @@
+.sp-view-main-container .p-images .p-img-container{
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #315afc;
+    width: 95%;
+    margin: 10px;
+}
+.sp-view-main-container .p-images .p-img-container img{
+height: 400px;
+}
+
+.sp-view-main-container .p-name{
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+.sp-view-main-container .p-ratings i{
+    color: rgb(255, 200, 50);
+}
+
+.sp-view-main-container .p-ratings span{
+    color: black;
+    text-decoration: underline;
+}
+
+.sp-view-main-container .p-price span{
+    font-size: 20px;
+    font-weight: bolder;
+}
