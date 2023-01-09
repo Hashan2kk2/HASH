@@ -192,15 +192,19 @@
 
                             $start = ($pageNo - 1) * $rowsPerPage;
 
+                            // $product = Database::search("SELECT * FROM product LIMIT {$start}, {$rowsPerPage}");
+                            $product = Database::search("SELECT product.productName, product.id, images.id AS imgId, images.code, images.img_no FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 LIMIT {$start}, {$rowsPerPage}");
 
-                            $product = Database::search("SELECT * FROM product LIMIT {$start}, {$rowsPerPage}");
+                            // $prodImages = Database::search("SELECT product.id, images.code, images.product_id FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1");
                             while ($result = $product->fetch_assoc()) {
+                                
+                                // $prodimgRs = $prodImages->fetch_assoc();
                             ?>
 
                                 <!-- card -->
                                 <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                     <div class="product-img d-flex">
-                                        <img src="../img/jacket.png" alt="product-img">
+                                        <img src="<?php echo $result["code"];?>" alt="product-img">
                                     </div>
                                     <div class="product-details d-flex justify-content-around">
                                         <div class="product-name align-items-center d-flex">
