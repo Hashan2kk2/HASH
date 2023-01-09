@@ -372,3 +372,14 @@ function addProduct() {
 }
 
 // add Product
+
+// admin Dashboard
+function manageRecentlistingpg(){
+    var overviewPg = document.getElementById("overviewPg");
+    var addproductPg = document.getElementById("addproductPg");
+    window.location = "addProduct.php";
+
+    overviewPg.classList.remove("d-none");
+    addproductPg.classList.add("d-none");
+}
+// admin Dashboard
