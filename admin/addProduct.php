@@ -77,11 +77,11 @@
                 </div>
                 <!-- search bar -->
                 <!-- products list -->
-                <div class="row d-none" id="overviewPg">
+                <div class="row" id="overviewPg">
                     <div class="col-12 products-list justify-content-center">
                         <div class="row no-gutters gy-0 justify-content-around">
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -93,11 +93,11 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
 
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -109,11 +109,11 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
 
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -125,11 +125,11 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
 
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -141,11 +141,11 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
 
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -157,11 +157,11 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
 
                             <!-- card -->
-                            <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                 <div class="product-img d-flex">
                                     <img src="../img/jacket.png" alt="product-img">
                                 </div>
@@ -173,19 +173,94 @@
                                         <button><i class='bx bxs-edit'></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- card -->
+
+                            <?php
+                            $prodCount = Database::search("SELECT COUNT(id) AS count FROM product");
+                            $prodCountRs = $prodCount->fetch_assoc();
+
+                            $totalRows = $prodCountRs["count"];
+
+                            $rowsPerPage = 6;
+
+                            if (isset($_GET['p'])) {
+                                $pageNo = $_GET['p'];
+                            } else {
+                                $pageNo = 1;
+                            }
+
+                            $start = ($pageNo - 1) * $rowsPerPage;
+
+
+                            $product = Database::search("SELECT * FROM product LIMIT {$start}, {$rowsPerPage}");
+                            while ($result = $product->fetch_assoc()) {
+                            ?>
+
+                                <!-- card -->
+                                <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
+                                    <div class="product-img d-flex">
+                                        <img src="../img/jacket.png" alt="product-img">
+                                    </div>
+                                    <div class="product-details d-flex justify-content-around">
+                                        <div class="product-name align-items-center d-flex">
+                                            <?php echo $result["productName"]; ?>
+                                        </div>
+                                        <div class="edit align-items-center d-flex">
+                                            <button><i class='bx bxs-edit'></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            <?php
+                            }
+
+                            ?>
                         </div>
+
                         <div class="row mt-5">
                             <div class="pagination d-flex justify-content-center">
-                                <a href="#">&laquo;</a>
-                                <a class="active" href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
+
+                                <!-- previous page -->
+                                <?php
+
+                                if ($pageNo <= 1) {
+
+                                ?>
+                                    <a>&laquo;</a>
+                                <?php
+                                } else {
+                                    $prevpg = $pageNo - 1;
+                                ?>
+                                    <a href="addProduct.php?p=<?php echo $prevpg; ?>">&laquo;</a>
+                                <?php
+                                }
+                                ?>
+                                <!-- first Page -->
+                                <a href="addProduct.php?p=1">1st Page</a>
+
+                                <!-- last page -->
+                                <?php
+                                $lastPage = ceil($totalRows / $rowsPerPage);
+                                ?>
+                                <a href="addProduct.php?p=<?php echo $lastPage; ?>">Last Page</a>
+
+                                <!-- next page -->
+                                <?php
+                                if ($pageNo >= $lastPage) {
+
+                                ?>
+                                    <a>&raquo;</a>
+                                <?php
+                                } else {
+                                    $nextpg = $pageNo + 1;
+                                ?>
+                                    <a href="addProduct.php?p=<?php echo $nextpg; ?>">&raquo;</a>
+                                <?php
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>
@@ -194,7 +269,7 @@
                 <!-- overview -->
 
                 <!-- Add product Form -->
-                <div class="row mt-3 " id="addproductPg">
+                <div class="row mt-3 d-none" id="addproductPg">
                     <!-- product details box -->
                     <div class="col-12 col-lg-6 add-product">
                         <div class="row my-3">
