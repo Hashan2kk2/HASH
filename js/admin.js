@@ -128,18 +128,20 @@ function adminSaveChanges() {
         }, 5000);
         window.location = "adminUserProfile.php";
       } else {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: t,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        // Swal.fire({
+        //   position: "center",
+        //   icon: "error",
+        //   title: t,
+        //   showConfirmButton: false,
+        //   timer: 1500,
+        // });
+
+        alert(t);
       }
     }
   };
 
-  req.open("POST", "../admin/updateAdminProfileProcess.php", true);
+  req.open("POST", "updateAdminProfileProcess.php", true);
   req.send(adminUpdateForm);
 }
 
@@ -216,7 +218,7 @@ function updateAdminPassword() {
     }
   };
 
-  r.open("POST", "../admin/updateAdminPasswordProcess.php", true);
+  r.open("POST", "admin/updateAdminPasswordProcess.php", true);
   r.send(pwForm);
 }
 
@@ -339,10 +341,10 @@ function addProduct() {
         type.value = 0;
         brand.value = 0;
         prodDescription.value = "";
-        img1.src = "../img/addImage.svg";
-        img2.src = "../img/addImage.svg";
-        img3.src = "../img/addImage.svg";
-        img4.src = "../img/addImage.svg";
+        img1.src = "img/addImage.svg";
+        img2.src = "img/addImage.svg";
+        img3.src = "img/addImage.svg";
+        img4.src = "img/addImage.svg";
         prodPrice.value = "";
         deliveryCost.value = "";
         qty.value = "";

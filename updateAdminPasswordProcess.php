@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../connection.php";
+require "connection.php";
 
 
 $id = $_SESSION["admin"]["id"];

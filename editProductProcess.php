@@ -8,7 +8,7 @@ $pQty = $_POST["prodQty"];
 $id = $_POST["id"];
 
 session_start();
-require "../connection.php";
+require "connection.php";
 
 if (empty($pName)) {
     echo "Please Enter the product Name";

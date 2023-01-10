@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../connection.php";
+require "connection.php";
 
 $id = $_SESSION["admin"]["id"];
 $fname = $_POST["fname"];
@@ -38,7 +38,7 @@ if(empty($fname)){
         // echo $image["name"];
         $file_extention = $image["type"];
         if (in_array($file_extention, $allowed_image_extention)) {
-            $fileName = "..//resources//profpic//" . uniqid() . $image["name"];
+            $fileName = "resources//profpic//" . uniqid() . $image["name"];
             move_uploaded_file($image["tmp_name"], $fileName);
 
             // pi = profile Image

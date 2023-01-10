@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../connection.php";
+require "connection.php";
 
 $id = $_SESSION["admin"]["id"];
 $statId = "1";
@@ -79,10 +79,10 @@ if (empty($pName)) {
 
 
         if (in_array($file_extention_1, $allowed_image_extention) && in_array($file_extention_2, $allowed_image_extention) && in_array($file_extention_3, $allowed_image_extention) && in_array($file_extention_4, $allowed_image_extention)) {
-            $fileName_1 = "..//resources//product_img//" . uniqid() . $image_1["name"];
-            $fileName_2 = "..//resources//product_img//" . uniqid() . $image_2["name"];
-            $fileName_3 = "..//resources//product_img//" . uniqid() . $image_3["name"];
-            $fileName_4 = "..//resources//product_img//" . uniqid() . $image_4["name"];
+            $fileName_1 = "resources//product_img//" . uniqid() . $image_1["name"];
+            $fileName_2 = "resources//product_img//" . uniqid() . $image_2["name"];
+            $fileName_3 = "resources//product_img//" . uniqid() . $image_3["name"];
+            $fileName_4 = "resources//product_img//" . uniqid() . $image_4["name"];
             move_uploaded_file($image_1["tmp_name"], $fileName_1);
             move_uploaded_file($image_2["tmp_name"], $fileName_2);
             move_uploaded_file($image_3["tmp_name"], $fileName_3);

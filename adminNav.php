@@ -8,17 +8,17 @@
 
 
     <!-- css links -->
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!-- ==================================== -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/adminSideNav.css">
+    <link rel="stylesheet" href="css/adminSideNav.css">
 </head>
 
 <body>
@@ -54,10 +54,10 @@
             </p>
         </div>
     </nav>
-    <script src="../js/jquery-3.6.1.min.js"></script>
-    <script src="../js/popper.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/admin.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
 
 </body>
 

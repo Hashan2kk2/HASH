@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product | HASH</title>
     <!-- css links -->
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!-- ==================================== -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/adminSideNav.css">
+    <link rel="stylesheet" href="css/adminSideNav.css">
 </head>
 
 <body>
     <?php
 
     session_start();
-    require "../connection.php";
+    require "connection.php";
 
     if (isset($_SESSION["admin"])) {
     ?>
@@ -269,20 +269,20 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-1">
-                                        <img src="../img/addImage.svg" alt="prodImg" id="img1Prev">
+                                        <img src="img/addImage.svg" alt="prodImg" id="img1Prev">
                                     </div>
                                     <div class="col-12 col-lg-6 my-2 prod-image-bx prod-img-2 text-center">
-                                        <img src="../img/addImage.svg" alt="prodImg" id="img2Prev">
+                                        <img src="img/addImage.svg" alt="prodImg" id="img2Prev">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="row d-flex gx-1">
                                     <div class="col my-2 prod-img-3 text-center">
-                                        <img src="../img/addImage.svg" alt="prodImg" id="img3Prev">
+                                        <img src="img/addImage.svg" alt="prodImg" id="img3Prev">
                                     </div>
                                     <div class="col my-2 prod-img-4 text-center">
-                                        <img src="../img/addImage.svg" alt="prodImg" id="img4Prev">
+                                        <img src="img/addImage.svg" alt="prodImg" id="img4Prev">
                                     </div>
                                 </div>
                             </div>
@@ -347,11 +347,11 @@
         <!-- ============= Page Content ============= -->
 
 
-        <script src="../js/jquery-3.6.1.min.js"></script>
-        <script src="../js/popper.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="../js/admin.js"></script>
+        <script src="js/admin.js"></script>
     <?php
     } else {
     ?>

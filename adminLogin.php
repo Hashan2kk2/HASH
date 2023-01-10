@@ -8,10 +8,10 @@
     <title>Admin</title>
 
     <!-- css links -->
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
@@ -59,8 +59,8 @@
             </div>
         </div>
     </div>
-    <script src="../js/admin.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

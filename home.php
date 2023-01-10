@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
@@ -135,47 +135,26 @@
 
         <!-- Selection -->
         <div class="row d-flex justify-content-center my-3 gap-1">
-            <div class="col-5 text-center col-md-2 selection active">Latest</div>
-            <div class="col-5 text-center col-md-2 selection">For Mens</div>
-            <div class="col-5 text-center col-md-2 selection">For Womans</div>
-            <div class="col-5 text-center col-md-2 selection">For Kids</div>
+            <div class="col-5 text-center col-md-2 selection active" id="latestbtn" onclick="switchLatest();">Latest</div>
+            <div class="col-5 text-center col-md-2 selection" id="mentbtn" onclick="switchMens();">For Mens</div>
+            <div class="col-5 text-center col-md-2 selection"id="womanbtn" onclick="switchWomans();">For Womans</div>
+            <div class="col-5 text-center col-md-2 selection" id="kidbtn" onclick="switchKids();">For Kids</div>
         </div>
         <!-- Selection -->
 
         <!-- latest Products -->
-        <div class="row g-2 d-flex justify-content-center">
-            <!-- <div class="col-7 col-sm-5 col-lg-3">
-                <div class="p-2 border bg-light">
-                    <img src="img/shoe.png" alt="shoe" class="img-fluid">
-                </div>
-                <div class="row p-2">
-                    <div class="col-10">
-                        Product Name
-                    </div>
-                    <div class="col-2">
-                        <i class="bx bx-heart"></i>
-                    </div>
-                </div>
-                <div class="row mx-1 p-2 price">
-                    <div class="col-10 text-white">
-                        Rs. 12000.00
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <i class='bx bxs-message-square-add fs-4'></i>
-                    </div>
-                </div>
-            </div> -->
-
+        <div class="row g-2 d-flex justify-content-center" id="latest">
             <?php
 
             $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
             $prodNr = $prod->num_rows;
             for ($i = 0; $i < $prodNr; $i++) {
                 $prodRs = $prod->fetch_assoc();
+                // echo $prodRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light">
-                        <img src="<?php $prodRs["code"];?>" alt="shoe" class="img-fluid">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                        <img src='<?php echo $prodRs["code"]; ?>' alt="shoe" class="img-fluid">
                     </div>
                     <div class="row p-2">
                         <div class="col-10">
@@ -187,7 +166,7 @@
                     </div>
                     <div class="row mx-1 p-2 price">
                         <div class="col-10 text-white">
-                            Rs. 12000.00
+                            <?php echo $prodRs["price"] . '.00'; ?>
                         </div>
                         <div class="col-2 text-center text-white">
                             <i class='bx bxs-message-square-add fs-4'></i>
@@ -198,71 +177,122 @@
             }
 
             ?>
-            <!-- <div class="col-7 col-sm-5 col-lg-3">
-                <div class="p-2 border bg-light">
-                    <img src="img/jacket.png" alt="shoe" class="img-fluid">
-                </div>
-                <div class="row p-2">
-                    <div class="col-10">
-                        Product Name
-                    </div>
-                    <div class="col-2">
-                        <i class="bx bx-heart"></i>
-                    </div>
-                </div>
-                <div class="row mx-1 p-2 price">
-                    <div class="col-10 text-white">
-                        Rs. 12000.00
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <i class='bx bxs-message-square-add fs-4'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-7 col-sm-5 col-lg-3">
-                <div class="p-2 border bg-light">
-                    <img src="img/miBand.png" alt="shoe" class="img-fluid">
-                </div>
-                <div class="row p-2">
-                    <div class="col-10">
-                        Product Name
-                    </div>
-                    <div class="col-2">
-                        <i class="bx bx-heart"></i>
-                    </div>
-                </div>
-                <div class="row mx-1 p-2 price">
-                    <div class="col-10 text-white">
-                        Rs. 12000.00
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <i class='bx bxs-message-square-add fs-4'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-7 col-sm-5 col-lg-3">
-                <div class="p-2 border bg-light">
-                    <img src="img/backpack1.png" alt="shoe" class="img-fluid">
-                </div>
-                <div class="row p-2">
-                    <div class="col-10">
-                        Product Name
-                    </div>
-                    <div class="col-2">
-                        <i class="bx bx-heart"></i>
-                    </div>
-                </div>
-                <div class="row mx-1 p-2 price">
-                    <div class="col-10 text-white">
-                        Rs. 12000.00
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <i class='bx bxs-message-square-add fs-4'></i>
-                    </div>
-                </div>
-            </div> -->
         </div>
         <!-- latest Products -->
+
+        <!-- mens Products -->
+        <div class="row g-2 d-flex justify-content-center d-none" id="forMen">
+            <?php
+
+            $men = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 2 ORDER BY id LIMIT 4");
+            $menNr = $men->num_rows;
+            for ($i = 0; $i < $menNr; $i++) {
+                $menRs = $men->fetch_assoc();
+                // echo $menRs["code"];
+            ?>
+                <div class="col-7 col-sm-5 col-lg-3">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                        <img src='<?php echo $menRs["code"]; ?>' alt="shoe" class="img-fluid">
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-10">
+                            <?php echo $menRs["productName"]; ?>
+                        </div>
+                        <div class="col-2">
+                            <i class="bx bx-heart"></i>
+                        </div>
+                    </div>
+                    <div class="row mx-1 p-2 price">
+                        <div class="col-10 text-white">
+                            <?php echo $menRs["price"] . '.00'; ?>
+                        </div>
+                        <div class="col-2 text-center text-white">
+                            <i class='bx bxs-message-square-add fs-4'></i>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+
+            ?>
+        </div>
+        <!-- mens Products -->
+        <!-- woman Products -->
+        <div class="row g-2 d-flex justify-content-center d-none" id="forWoman">
+            <?php
+
+            $ladies = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 3 ORDER BY id LIMIT 4");
+            $ladiesNr = $ladies->num_rows;
+            // echo $ladiesNr;
+            for ($i = 0; $i < $ladiesNr; $i++) {
+                $ladiesRs = $ladies->fetch_assoc();
+                // echo $ladiesRs["code"];
+            ?>
+                <div class="col-7 col-sm-5 col-lg-3">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                        <img src='<?php echo $ladiesRs["code"]; ?>' alt="shoe" class="img-fluid">
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-10">
+                            <?php echo $ladiesRs["productName"]; ?>
+                        </div>
+                        <div class="col-2">
+                            <i class="bx bx-heart"></i>
+                        </div>
+                    </div>
+                    <div class="row mx-1 p-2 price">
+                        <div class="col-10 text-white">
+                            <?php echo $ladiesRs["price"] . '.00'; ?>
+                        </div>
+                        <div class="col-2 text-center text-white">
+                            <i class='bx bxs-message-square-add fs-4'></i>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+
+            ?>
+        </div>
+        <!-- woman Products -->
+        <!-- woman Products -->
+        <div class="row g-2 d-flex justify-content-center d-none" id="forKids">
+            <?php
+
+            $kids = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 1 ORDER BY id LIMIT 4");
+            $kidsNr = $kids->num_rows;
+            // echo $kidsNr;
+            for ($i = 0; $i < $kidsNr; $i++) {
+                $kidsRs = $kids->fetch_assoc();
+                // echo $kidsRs["code"];
+            ?>
+                <div class="col-7 col-sm-5 col-lg-3">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                        <img src='<?php echo $kidsRs["code"]; ?>' alt="shoe" class="img-fluid">
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-10">
+                            <?php echo $kidsRs["productName"]; ?>
+                        </div>
+                        <div class="col-2">
+                            <i class="bx bx-heart"></i>
+                        </div>
+                    </div>
+                    <div class="row mx-1 p-2 price">
+                        <div class="col-10 text-white">
+                            <?php echo $kidsRs["price"] . '.00'; ?>
+                        </div>
+                        <div class="col-2 text-center text-white">
+                            <i class='bx bxs-message-square-add fs-4'></i>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+
+            ?>
+        </div>
+        <!-- woman Products -->
 
     </section>
     <?php
