@@ -596,5 +596,28 @@
 }
 /* product img form */
 
+
+.manage-product .card-body{
+    /* background-color: rebeccapurple; */
+    overflow: hidden;
+    border: #315afc solid 2px;
+    border-radius: 8px;
+}
+
+.manage-product .card-body .product-img{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manage-product .card-body .product-img img{
+    height: 200px;
+}
+
+.manage-product .card-body .product-name{
+    font-size: 20px;
+    color: black;
+}
 /* Add Product */
 /* =============== */

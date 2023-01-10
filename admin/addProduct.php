@@ -61,6 +61,7 @@
                     <div class="col-12 overview-addproduct-bar">
                         <button onclick="productOverviewPg();">Overview</button>
                         <button onclick="addNewProductPg();">+ Add Product</button>
+                        <button><a href="manageProduct.php" class="text-dark">Manage Products</a></button>
                     </div>
                 </div>
                 <!-- overview addproduct bar -->
@@ -112,11 +113,11 @@
                                     <div class="product-img d-flex">
                                         <img src="<?php echo $result["code"]; ?>" alt="product-img">
                                     </div>
-                                    <div class="product-details d-flex justify-content-around">
+                                    <div class="product-details d-flex justify-content-between">
                                         <div class="product-name align-items-center d-flex">
                                             <?php echo $result["productName"]; ?>
                                         </div>
-                                        <div class="edit align-items-center d-flex">
+                                        <div class="edit">
                                             <button><a class="text-white" href='<?php echo "editProduct.php?pid=" . ($result['id']) ?>'><i class='bx bxs-edit'></i></a></button>
                                         </div>
                                     </div>
@@ -334,6 +335,12 @@
 
                 </div>
                 <!-- Add product Form -->
+
+                <!-- manage Products -->
+
+                
+
+                <!-- manage Products -->
 
             </div>
         </div>
