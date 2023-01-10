@@ -26,7 +26,18 @@ CREATE TABLE IF NOT EXISTS `brand` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.brand: ~10 rows (approximately)
+INSERT INTO `brand` (`id`, `name`) VALUES
+	(1, 'Nike'),
+	(2, 'Adidas'),
+	(3, 'New Balance'),
+	(4, 'Puma'),
+	(5, 'Converse'),
+	(6, 'Reebok'),
+	(7, 'Under Armour'),
+	(8, 'Fila'),
+	(9, 'Athleta'),
+	(10, 'Lululemon');
 
 -- Dumping structure for table final_project_webdev.category
 CREATE TABLE IF NOT EXISTS `category` (
@@ -35,7 +46,13 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.category: ~5 rows (approximately)
+INSERT INTO `category` (`id`, `name`) VALUES
+	(1, 'Business Attire'),
+	(2, 'Casual Wear'),
+	(3, 'Formal Waer'),
+	(4, 'Sports Wear'),
+	(5, 'Childrens Wear');
 
 -- Dumping structure for table final_project_webdev.color
 CREATE TABLE IF NOT EXISTS `color` (
@@ -44,7 +61,15 @@ CREATE TABLE IF NOT EXISTS `color` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.color: ~7 rows (approximately)
+INSERT INTO `color` (`id`, `name`) VALUES
+	(1, 'Blue'),
+	(2, 'Gray'),
+	(3, 'Green'),
+	(4, 'Yellow'),
+	(5, 'Black'),
+	(6, 'Red'),
+	(7, 'Orange');
 
 -- Dumping structure for table final_project_webdev.gender
 CREATE TABLE IF NOT EXISTS `gender` (
@@ -53,7 +78,10 @@ CREATE TABLE IF NOT EXISTS `gender` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.gender: ~2 rows (approximately)
+INSERT INTO `gender` (`id`, `name`) VALUES
+	(1, 'Male'),
+	(2, 'Female');
 
 -- Dumping structure for table final_project_webdev.images
 CREATE TABLE IF NOT EXISTS `images` (
@@ -66,7 +94,64 @@ CREATE TABLE IF NOT EXISTS `images` (
   CONSTRAINT `fk_images_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.images: ~40 rows (approximately)
+INSERT INTO `images` (`id`, `code`, `product_id`, `img_no`) VALUES
+	(33, 'resources//product_img//63bb315ad6fdamacos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg', 14, 1),
+	(34, 'resources//product_img//63bb315ad6fdemacos-catalina-mountains-island-morning-foggy-stock-5k-6016x6016-4019.jpg', 14, 2),
+	(35, 'resources//product_img//63bb315ad6fdfmacos-catalina-mountains-island-night-stock-5k-6016x6016-189.jpg', 14, 3),
+	(36, 'resources//product_img//63bb315ad6fe0macos-catalina-mountains-island-sunny-day-stock-5k-6016x6016-4013.jpg', 14, 4),
+	(37, 'resources//product_img//63bb3184e7d84macos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg', 15, 1),
+	(38, 'resources//product_img//63bb3184e7d87macos-catalina-mountains-island-morning-foggy-stock-5k-6016x6016-4019.jpg', 15, 2),
+	(39, 'resources//product_img//63bb3184e7d88macos-catalina-mountains-island-night-stock-5k-6016x6016-189.jpg', 15, 3),
+	(40, 'resources//product_img//63bb3184e7d89macos-catalina-mountains-island-sunny-day-stock-5k-6016x6016-4013.jpg', 15, 4),
+	(41, 'resources//product_img//63bb31972d142macos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg', 16, 1),
+	(42, 'resources//product_img//63bb31972d145macos-catalina-mountains-island-morning-foggy-stock-5k-6016x6016-4019.jpg', 16, 2),
+	(43, 'resources//product_img//63bb31972d146macos-catalina-mountains-island-night-stock-5k-6016x6016-189.jpg', 16, 3),
+	(44, 'resources//product_img//63bb31972d147macos-catalina-mountains-island-sunny-day-stock-5k-6016x6016-4013.jpg', 16, 4),
+	(45, 'resources//product_img//63bb31b3815b9macos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg', 17, 1),
+	(46, 'resources//product_img//63bb31b3815bbmacos-catalina-mountains-island-morning-foggy-stock-5k-6016x6016-4019.jpg', 17, 2),
+	(47, 'resources//product_img//63bb31b3815bcmacos-catalina-mountains-island-night-stock-5k-6016x6016-189.jpg', 17, 3),
+	(48, 'resources//product_img//63bb31b3815bdmacos-catalina-mountains-island-sunny-day-stock-5k-6016x6016-4013.jpg', 17, 4),
+	(49, 'resources//product_img//63bb3457b5260adidas.jpg', 18, 1),
+	(50, 'resources//product_img//63bb3457b5263adidas2.jpg', 18, 2),
+	(51, 'resources//product_img//63bb3457b5264adidas3.jpg', 18, 3),
+	(52, 'resources//product_img//63bb3457b5265adidas4.jpg', 18, 4),
+	(53, 'resources//product_img//63bb34b60497cadidas4.jpg', 19, 1),
+	(54, 'resources//product_img//63bb34b60497fadidas3.jpg', 19, 2),
+	(55, 'resources//product_img//63bb34b604980adidas2.jpg', 19, 3),
+	(56, 'resources//product_img//63bb34b604981adidas.jpg', 19, 4),
+	(57, 'resources//product_img//63bb37e7c9766trio21.jpg', 20, 1),
+	(58, 'resources//product_img//63bb37e7c9769trio22.jpg', 20, 2),
+	(59, 'resources//product_img//63bb37e7c976atrio23.jpg', 20, 3),
+	(60, 'resources//product_img//63bb37e7c976btrio24.jpg', 20, 4),
+	(61, 'resources//product_img//63bb387a816ectrio24.jpg', 21, 1),
+	(62, 'resources//product_img//63bb387a816eftrio23.jpg', 21, 2),
+	(63, 'resources//product_img//63bb387a816f0trio22.jpg', 21, 3),
+	(64, 'resources//product_img//63bb387a816f1trio21.jpg', 21, 4),
+	(65, 'resources//product_img//63bb38bc44df5trio23.jpg', 22, 1),
+	(66, 'resources//product_img//63bb38bc44df8trio24.jpg', 22, 2),
+	(67, 'resources//product_img//63bb38bc44df9trio21.jpg', 22, 3),
+	(68, 'resources//product_img//63bb38bc44dfatrio22.jpg', 22, 4),
+	(69, 'resources//product_img//63bc122655a0fwallpaperflare.com_wallpaper(2).jpg', 25, 1),
+	(70, 'resources//product_img//63bc122655a19ice-caves-frozen-glacier-mendenhall-glacier-underwater-7000x3653-5424.jpg', 25, 2),
+	(71, 'resources//product_img//63bc122655a1aiphone-background-nature.jpg', 25, 3),
+	(72, 'resources//product_img//63bc122655a1bisolated-black-t-shirt-model-front-view.jpg', 25, 4),
+	(78, 'resources//product_img//63bd5b035e4e3adidas1.png', 28, 1),
+	(79, 'resources//product_img//63bd5b035e4e8adidas2.png', 28, 2),
+	(80, 'resources//product_img//63bd5b035e4e9adidas2.png', 28, 3),
+	(81, 'resources//product_img//63bd5b035e4eaadidas1.png', 28, 4),
+	(82, 'resources//product_img//63bd5b5c16ed7adidas1.png', 29, 1),
+	(83, 'resources//product_img//63bd5b5c16edcadidas2.png', 29, 2),
+	(84, 'resources//product_img//63bd5b5c16eddadidas1.png', 29, 3),
+	(85, 'resources//product_img//63bd5b5c16edeadidas2.png', 29, 4),
+	(86, 'resources//product_img//63bd5b8a7fd2aadidas2.png', 30, 1),
+	(87, 'resources//product_img//63bd5b8a7fd2dadidas1.png', 30, 2),
+	(88, 'resources//product_img//63bd5b8a7fd2eadidas2.png', 30, 3),
+	(89, 'resources//product_img//63bd5b8a7fd2fadidas1.png', 30, 4),
+	(90, 'resources//product_img//63bd5c0f15a52adidas1.png', 31, 1),
+	(91, 'resources//product_img//63bd5c0f15a57adidas2.png', 31, 2),
+	(92, 'resources//product_img//63bd5c0f15a58adidas2.png', 31, 3),
+	(93, 'resources//product_img//63bd5c0f15a59adidas1.png', 31, 4);
 
 -- Dumping structure for table final_project_webdev.invoice
 CREATE TABLE IF NOT EXISTS `invoice` (
@@ -85,7 +170,9 @@ CREATE TABLE IF NOT EXISTS `invoice` (
   CONSTRAINT `fk_invoice_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.invoice: ~0 rows (approximately)
+INSERT INTO `invoice` (`id`, `order_id`, `user_id`, `product_id`, `date`, `total`, `qty`, `status`) VALUES
+	(1, '41245', 3, 21, '2023-01-09 05:13:53', 14000, 2, 1);
 
 -- Dumping structure for table final_project_webdev.product
 CREATE TABLE IF NOT EXISTS `product` (
@@ -114,7 +201,27 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `fk_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.product: ~15 rows (approximately)
+INSERT INTO `product` (`id`, `price`, `qty`, `description`, `productName`, `date_added`, `delivery_fee`, `user_id`, `brand_id`, `status_id`, `type_id`, `category_id`) VALUES
+	(11, 123, 123, 'qwe', '123', '2022-03-12', 123, 4, 2, 1, 3, 1),
+	(12, 123, 123, 'this is the description', 'Product (M)', '2023-02-01', 123, 4, 2, 1, 2, 1),
+	(13, 123, 123, 'Product 2 with images', 'Product 2 with images', '2023-01-04', 123, 4, 1, 1, 3, 1),
+	(14, 1000, 21, 'wallpapers update', 'Catalina', '2023-01-04', 500, 4, 1, 2, 1, 1),
+	(15, 123, 123, 'Product 3 with images', 'Product 3 with images', '2023-01-04', 123, 4, 1, 1, 1, 1),
+	(16, 123, 123, 'Product 3 with images', 'Product 4 with images', '2023-01-04', 123, 4, 1, 2, 1, 1),
+	(17, 123, 123, 'Product 5 with images', 'Product 5 with images', '2023-01-04', 123, 4, 1, 1, 1, 1),
+	(18, 8500, 25, 'Tiro 21 Track Jacket', 'Product (M)', '2023-01-10', 1000, 4, 2, 1, 2, 4),
+	(19, 321, 32, 'Tiro 21 Track Jacket', 'Product (W)', '2023-01-26', 321, 4, 2, 1, 3, 4),
+	(20, 6700, 84, 'Tiro 21 Training Jersey', 'Product (W)', '2023-02-03', 750, 4, 2, 1, 3, 4),
+	(21, 14500, 24, 'Tiro 21 Training Jersey', 'Product (M)', '2023-04-05', 1500, 4, 2, 2, 2, 4),
+	(22, 1234, 45, 'Tiro 21 Training Jersey', 'Product (W)', '2023-05-20', 3214, 4, 5, 1, 2, 1),
+	(23, 1231, 32, 'adasda', 'Product (M)', '2023-01-18', 123, 4, 5, 1, 3, 1),
+	(24, 1231, 32, 'adasda', 'Product (M)', '2023-01-18', 123, 4, 5, 1, 2, 1),
+	(25, 1231, 32, 'adasda', 'Product (M)', '2023-01-18', 123, 4, 5, 1, 2, 1),
+	(28, 1000, 50, 'Description of the product', 'Mens Product', '2023-03-24', 500, 4, 4, 1, 2, 2),
+	(29, 400, 40, 'Product Description', 'Kids Product', '2023-03-24', 400, 4, 3, 1, 1, 5),
+	(30, 40, 10, 'Prod Description', 'Womans', '2023-03-24', 10, 4, 1, 1, 3, 3),
+	(31, 4000, 10, 'Description', 'Ladies', '2023-03-24', 200, 4, 3, 1, 2, 2);
 
 -- Dumping structure for table final_project_webdev.prof_img
 CREATE TABLE IF NOT EXISTS `prof_img` (
@@ -126,7 +233,10 @@ CREATE TABLE IF NOT EXISTS `prof_img` (
   CONSTRAINT `fk_prof_img_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.prof_img: ~0 rows (approximately)
+INSERT INTO `prof_img` (`id`, `code`, `user_id`) VALUES
+	(6, 'resources//profpic//63bd40c788872adidas1.png', 4),
+	(7, 'resources//profpic//63bd17c1bf53eextraction-valley-pc-games-3840x2400-854.jpg', 3);
 
 -- Dumping structure for table final_project_webdev.size
 CREATE TABLE IF NOT EXISTS `size` (
@@ -135,7 +245,12 @@ CREATE TABLE IF NOT EXISTS `size` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.size: ~4 rows (approximately)
+INSERT INTO `size` (`id`, `name`) VALUES
+	(1, 'Small'),
+	(2, 'Medium'),
+	(3, 'Large'),
+	(4, 'Extra Large');
 
 -- Dumping structure for table final_project_webdev.status
 CREATE TABLE IF NOT EXISTS `status` (
@@ -144,7 +259,10 @@ CREATE TABLE IF NOT EXISTS `status` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.status: ~2 rows (approximately)
+INSERT INTO `status` (`id`, `name`) VALUES
+	(1, 'Available'),
+	(2, 'Unavailable');
 
 -- Dumping structure for table final_project_webdev.type
 CREATE TABLE IF NOT EXISTS `type` (
@@ -153,7 +271,11 @@ CREATE TABLE IF NOT EXISTS `type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.type: ~3 rows (approximately)
+INSERT INTO `type` (`id`, `name`) VALUES
+	(1, 'Kids'),
+	(2, 'Men'),
+	(3, 'Woman');
 
 -- Dumping structure for table final_project_webdev.user
 CREATE TABLE IF NOT EXISTS `user` (
@@ -174,7 +296,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `fk_user_user_type1` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.user: ~3 rows (approximately)
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `register_date`, `gender_id`, `verification_code`, `user_type_id`) VALUES
+	(2, 'Hashan', 'Lakruwan', 'hashan@gmail.com', '0771433565', '12345', '2022-08-24 18:11:25', 1, 'HASH_6341913fcf5bd', 1),
+	(3, 'Hashan', 'Lakruwan', 'hashan.lakruwan22@gmail.com', '0757769990', 'Hashan223344', '2022-10-30 12:15:39', 1, 'HASH_63bd16ffea595', 1),
+	(4, 'Hashan Lakruwan', 'Bamunuarachchi', 'hashan.lakruwan2020@gmail.com', '0771433562', 'Hashan123321123', '2022-11-01 16:11:29', 1, 'HASH_6360fabb31d49', 2);
 
 -- Dumping structure for table final_project_webdev.user_has_address
 CREATE TABLE IF NOT EXISTS `user_has_address` (
@@ -189,7 +315,13 @@ CREATE TABLE IF NOT EXISTS `user_has_address` (
   CONSTRAINT `fk_user_has_address_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.user_has_address: ~5 rows (approximately)
+INSERT INTO `user_has_address` (`id`, `line1`, `line2`, `city`, `postal_code`, `user_id`) VALUES
+	(1, '483', 'Dadugama', 'Ja Ela', '11350', 0),
+	(2, '457', 'Kadirana', 'Negombo', '11350', 0),
+	(3, '78', 'asad', 'asdas', '11350', 0),
+	(4, '483', 'Dadugama', 'JaEla', '11350', 4),
+	(5, '438', 'Dadugama', 'Ja Ela', '11350', 3);
 
 -- Dumping structure for table final_project_webdev.user_type
 CREATE TABLE IF NOT EXISTS `user_type` (
@@ -198,7 +330,10 @@ CREATE TABLE IF NOT EXISTS `user_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
--- Data exporting was unselected.
+-- Dumping data for table final_project_webdev.user_type: ~2 rows (approximately)
+INSERT INTO `user_type` (`id`, `name`) VALUES
+	(1, 'customer'),
+	(2, 'admin');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
