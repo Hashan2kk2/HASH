@@ -80,101 +80,7 @@
                 <div class="row" id="overviewPg">
                     <div class="col-12 products-list justify-content-center">
                         <div class="row no-gutters gy-0 justify-content-around">
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
 
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
-
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
-
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
-
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
-
-                            <!-- card -->
-                            <!-- <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
-                                <div class="product-img d-flex">
-                                    <img src="../img/jacket.png" alt="product-img">
-                                </div>
-                                <div class="product-details d-flex justify-content-around">
-                                    <div class="product-name align-items-center d-flex">
-                                        Nike Sportswear Tech Fleece
-                                    </div>
-                                    <div class="edit align-items-center d-flex">
-                                        <button><i class='bx bxs-edit'></i></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- card -->
 
                             <?php
                             $prodCount = Database::search("SELECT COUNT(id) AS count FROM product");
@@ -197,21 +103,21 @@
 
                             // $prodImages = Database::search("SELECT product.id, images.code, images.product_id FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1");
                             while ($result = $product->fetch_assoc()) {
-                                
+
                                 // $prodimgRs = $prodImages->fetch_assoc();
                             ?>
 
                                 <!-- card -->
                                 <div class="col-11 col-md-5 col-lg-4 col-xl-3 card-body d-block">
                                     <div class="product-img d-flex">
-                                        <img src="<?php echo $result["code"];?>" alt="product-img">
+                                        <img src="<?php echo $result["code"]; ?>" alt="product-img">
                                     </div>
                                     <div class="product-details d-flex justify-content-around">
                                         <div class="product-name align-items-center d-flex">
                                             <?php echo $result["productName"]; ?>
                                         </div>
                                         <div class="edit align-items-center d-flex">
-                                            <button><i class='bx bxs-edit'></i></button>
+                                            <button><a class="text-white" href='<?php echo "editProduct.php?pid=" . ($result['id']) ?>'><i class='bx bxs-edit'></i></a></button>
                                         </div>
                                     </div>
                                 </div>

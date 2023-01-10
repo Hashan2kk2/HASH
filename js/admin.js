@@ -344,18 +344,18 @@ function addProduct() {
                     timer: 1500
                 });
                 // window.location = "addProduct.php";
-                prodName.value="";
-                category.value=0;
-                type.value=0;
-                brand.value=0;
-                prodDescription.value="";
-                img1.src="../img/addImage.svg";
-                img2.src="../img/addImage.svg";
-                img3.src="../img/addImage.svg";
-                img4.src="../img/addImage.svg";
-                prodPrice.value="";
-                deliveryCost.value="";
-                qty.value="";
+                prodName.value = "";
+                category.value = 0;
+                type.value = 0;
+                brand.value = 0;
+                prodDescription.value = "";
+                img1.src = "../img/addImage.svg";
+                img2.src = "../img/addImage.svg";
+                img3.src = "../img/addImage.svg";
+                img4.src = "../img/addImage.svg";
+                prodPrice.value = "";
+                deliveryCost.value = "";
+                qty.value = "";
             } else {
                 Swal.fire(
                     'Warning',
@@ -374,7 +374,7 @@ function addProduct() {
 // add Product
 
 // admin Dashboard
-function manageRecentlistingpg(){
+function manageRecentlistingpg() {
     var overviewPg = document.getElementById("overviewPg");
     var addproductPg = document.getElementById("addproductPg");
     window.location = "addProduct.php";
@@ -383,3 +383,59 @@ function manageRecentlistingpg(){
     addproductPg.classList.add("d-none");
 }
 // admin Dashboard
+
+// edit product
+function updateProduct(pid) {
+    let id = pid;
+    let prodName = document.getElementById("prodName");
+    let prodDescription = document.getElementById("prodDescription");
+    let pImgUpload1 = document.getElementById("pImgUpload1");
+    let pImgUpload2 = document.getElementById("pImgUpload2");
+    let pImgUpload3 = document.getElementById("pImgUpload3");
+    let pImgUpload4 = document.getElementById("pImgUpload4");
+    let prodPrice = document.getElementById("prodPrice");
+    let deliveryCost = document.getElementById("deliveryCost");
+    let qty = document.getElementById("prodQty");
+
+
+    let editProdForm = new FormData();
+
+    editProdForm.append("pName", prodName.value);
+    editProdForm.append("pDesc", prodDescription.value);
+    editProdForm.append("pImg1", pImgUpload1.files[0]);
+    editProdForm.append("pImg2", pImgUpload2.files[0]);
+    editProdForm.append("pImg3", pImgUpload3.files[0]);
+    editProdForm.append("pImg4", pImgUpload4.files[0]);
+    editProdForm.append("pPrice", prodPrice.value);
+    editProdForm.append("pDelCost", deliveryCost.value);
+    editProdForm.append("prodQty", qty.value);
+    editProdForm.append("id", id);
+
+    let r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+        if (r.readyState == 4) {
+            let t = r.responseText;
+            if (t == "OK") {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Product Added Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                window.location = "addProduct.php";
+            } else {
+                Swal.fire(
+                    'Warning',
+                    t,
+                    'question'
+                )
+            }
+        }
+    }
+
+    r.open("POST", "editProductProcess.php", true);
+    r.send(editProdForm);
+
+}
+// edit product

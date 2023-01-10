@@ -11,41 +11,10 @@ $pCat = $_POST["pCat"];
 $pType = $_POST["pType"];
 $pBrand = $_POST["pBrand"];
 $pDesc = $_POST["pDesc"];
-// $pImg1 = $_FILES["pImg1"];
-// $pImg2 = $_FILES["pImg2"];
-// $pImg3 = $_FILES["pImg3"];
-// $pImg4 = $_FILES["pImg4"];
 $pPrice = $_POST["pPrice"];
 $pDelCost = $_POST["pDelCost"];
 $pDate = $_POST["pDate"];
 $pQty = $_POST["prodQty"];
-
-// if (isset($_FILES["pImg1"])) {
-//     $imageFile1 = $_FILES["img"];
-// }
-// if (isset($_FILES["pImg2"])) {
-//     $imageFile2 = $_FILES["img"];
-// }
-// if (isset($_FILES["pImg3"])) {
-//     $imageFile3 = $_FILES["img"];
-// }
-// if (isset($_FILES["pImg4"])) {
-//     $imageFile4 = $_FILES["img"];
-// }
-
-
-// echo $pName;
-// echo $pCat;
-// echo $pType;
-// echo $pBrand;
-// echo $pDesc;
-// // echo $pImg1;
-// // echo $pImg2;
-// // echo $pImg3;
-// // echo $pImg4;
-// echo $pPrice;
-// echo $pDelCost;
-
 
 
 if (empty($pName)) {

@@ -169,7 +169,7 @@
                                         </tbody>
                                     </table>
                                     <div class="show-more mb-2">
-                                        <button>Show more</button>
+                                        <button><a href="viewUsers.php" class="text-white">Show more</a></button>
                                     </div>
                                 </div>
                                 <!--recent users-->

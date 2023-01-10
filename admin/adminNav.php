@@ -24,7 +24,7 @@
 <body>
 
     <nav id="sidebar" class="active">
-        <h1><a href="index.html" class="adminlogo">#</a></h1>
+        <h1><a href="#" class="adminlogo">H</a></h1>
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <a href="adminDashboard.php"><span class='bx bxs-dashboard'></span> Home</a>
@@ -39,7 +39,10 @@
                 <a href="#"><span class='bx bxs-message-dots' ></span> Messages</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+                <a href="viewUsers.php"><span class="fa fa-users"></span> Users</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-file"></span> Invoice</a>
             </li>
         </ul>
 
@@ -47,7 +50,7 @@
             <p>
                 Copyright &copy;<script>
                     document.write(new Date().getFullYear());
-                </script> <br> Hashan Lakruwan <br>All rights reserved.
+                </script> <br> Hashan Lakruwan
             </p>
         </div>
     </nav>
