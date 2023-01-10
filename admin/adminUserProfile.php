@@ -52,7 +52,7 @@
 
                 <div class="row">
                     <div class="col-12 aup-greeting-text text-center">
-                        <span>Welcome Back <?php echo $_SESSION["admin"]["first_name"] ?></span>
+                        <span>Welcome Back <?php echo $data["first_name"] ?></span>
                     </div>
                 </div>
 

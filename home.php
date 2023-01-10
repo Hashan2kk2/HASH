@@ -19,6 +19,7 @@
 <body>
     <?php
 
+    // require "connection.php";
     require "navbar.php";
 
     ?>
@@ -134,16 +135,16 @@
 
         <!-- Selection -->
         <div class="row d-flex justify-content-center my-3 gap-1">
-            <div class="col-5 text-center col-md-2 selection active">Popular</div>
+            <div class="col-5 text-center col-md-2 selection active">Latest</div>
             <div class="col-5 text-center col-md-2 selection">For Mens</div>
             <div class="col-5 text-center col-md-2 selection">For Womans</div>
             <div class="col-5 text-center col-md-2 selection">For Kids</div>
         </div>
         <!-- Selection -->
 
-        <!-- popular Products -->
+        <!-- latest Products -->
         <div class="row g-2 d-flex justify-content-center">
-            <div class="col-7 col-sm-5 col-lg-3">
+            <!-- <div class="col-7 col-sm-5 col-lg-3">
                 <div class="p-2 border bg-light">
                     <img src="img/shoe.png" alt="shoe" class="img-fluid">
                 </div>
@@ -163,8 +164,41 @@
                         <i class='bx bxs-message-square-add fs-4'></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-7 col-sm-5 col-lg-3">
+            </div> -->
+
+            <?php
+
+            $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
+            $prodNr = $prod->num_rows;
+            for ($i = 0; $i < $prodNr; $i++) {
+                $prodRs = $prod->fetch_assoc();
+            ?>
+                <div class="col-7 col-sm-5 col-lg-3">
+                    <div class="p-2 border bg-light">
+                        <img src="<?php $prodRs["code"];?>" alt="shoe" class="img-fluid">
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-10">
+                            <?php echo $prodRs["productName"]; ?>
+                        </div>
+                        <div class="col-2">
+                            <i class="bx bx-heart"></i>
+                        </div>
+                    </div>
+                    <div class="row mx-1 p-2 price">
+                        <div class="col-10 text-white">
+                            Rs. 12000.00
+                        </div>
+                        <div class="col-2 text-center text-white">
+                            <i class='bx bxs-message-square-add fs-4'></i>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+
+            ?>
+            <!-- <div class="col-7 col-sm-5 col-lg-3">
                 <div class="p-2 border bg-light">
                     <img src="img/jacket.png" alt="shoe" class="img-fluid">
                 </div>
@@ -226,9 +260,9 @@
                         <i class='bx bxs-message-square-add fs-4'></i>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <!-- popular Products -->
+        <!-- latest Products -->
 
     </section>
     <?php
