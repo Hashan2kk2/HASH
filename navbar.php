@@ -97,9 +97,9 @@ session_start();
         <!-- <div class="container-fluid"> -->
         <div class="row">
             <div class="col-12 bottom-nav">
-                <a href="#">Home</a>
+                <a href="home.php">Home</a>
                 <a href="#">Shop</a>
-                <a href="#">Advanced</a>
+                <a href="advancedSearch.php">Advanced</a>
                 <a href="#">Pricing</a>
             </div>
         </div>

@@ -43,7 +43,7 @@
                     category
                     type
                     price -->
-            <div class="col-12 my-2 col-lg-6 d-block">
+            <div class="col-12 my-2 col-lg-8 d-block">
                 <div class="row mb-3">
                     <div class="col-12 apply-btn d-block">
                         <button onclick="advancedSearch(0);">Search</button>

@@ -153,9 +153,11 @@
                 // echo $prodRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
-                        <img src='<?php echo $prodRs["code"]; ?>' alt="shoe" class="img-fluid">
-                    </div>
+                    <a href="<?php echo "singleProductView.php?pid='" . $prodRs["id"] . "'"; ?>">
+                        <div onclick="viewProduct(<?php echo $prodRs["id"]; ?>);" class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
+                            <img src='<?php echo $prodRs["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                    </a>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $prodRs["productName"]; ?>
@@ -194,9 +196,11 @@
                 // echo $menRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
-                        <img src='<?php echo $menRs["code"]; ?>' alt="shoe" class="img-fluid">
-                    </div>
+                    <a href="<?php echo "singleProductView.php?pid='" . $menRs["id"] . "'"; ?>">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
+                            <img src='<?php echo $menRs["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                    </a>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $menRs["productName"]; ?>
@@ -209,8 +213,8 @@
                         <div class="col-10 text-white">
                             <?php echo $menRs["price"] . '.00'; ?>
                         </div>
-                        <div class="col-2 text-center text-white">
-                            <i class='bx bxs-message-square-add fs-4'></i>
+                        <div onclick="addToCart(<?php echo $menRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                            <i class='bx bx-cart-alt fs-4'></i>
                         </div>
                     </div>
                 </div>
@@ -235,9 +239,11 @@
                 // echo $ladiesRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
-                        <img src='<?php echo $ladiesRs["code"]; ?>' alt="shoe" class="img-fluid">
-                    </div>
+                    <a href="<?php echo "singleProductView.php?pid='" . $ladiesRs["id"] . "'"; ?>">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
+                            <img src='<?php echo $ladiesRs["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                    </a>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $ladiesRs["productName"]; ?>
@@ -250,8 +256,8 @@
                         <div class="col-10 text-white">
                             <?php echo $ladiesRs["price"] . '.00'; ?>
                         </div>
-                        <div class="col-2 text-center text-white">
-                            <i class='bx bxs-message-square-add fs-4'></i>
+                        <div onclick="addToCart(<?php echo $ladiesRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                            <i class='bx bx-cart-alt fs-4'></i>
                         </div>
                     </div>
                 </div>
@@ -276,9 +282,11 @@
                 // echo $kidsRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
-                        <img src='<?php echo $kidsRs["code"]; ?>' alt="shoe" class="img-fluid">
-                    </div>
+                    <a href="<?php echo "singleProductView.php?pid='" . $kidsRs["id"] . "'"; ?>">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
+                            <img src='<?php echo $kidsRs["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                    </a>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $kidsRs["productName"]; ?>
@@ -291,8 +299,8 @@
                         <div class="col-10 text-white">
                             <?php echo $kidsRs["price"] . '.00'; ?>
                         </div>
-                        <div class="col-2 text-center text-white">
-                            <i class='bx bxs-message-square-add fs-4'></i>
+                        <div onclick="addToCart(<?php echo $kidsRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                            <i class='bx bx-cart-alt fs-4'></i>
                         </div>
                     </div>
                 </div>

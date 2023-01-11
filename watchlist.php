@@ -99,7 +99,9 @@
                                         <hr class="my-3">
                                         <div class="col-12 text-end">
                                             <button class="btn btn-primary">Add To Cart</button>
+                                            <a href="<?php echo "singleProductView.php?pid='" . $watchlistData["product_id"] . "'"; ?>">
                                             <button class="btn btn-dark">View Product</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

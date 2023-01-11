@@ -638,6 +638,29 @@ function addtoWishList(id) {
   r.send();
 }
 
+function addtoWishListSpView(id) {
+  let pId = id;
+
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      // alert(t);
+      if (t == "Please Sign in or Register") {
+        alert("Please Sign in or Register")
+      } else if (t == "removed") {
+        alert("Product Removed from the wishlist");
+        window.location = "home.php";
+      } else if (t == "added") {
+        alert("Product Added to the Wishlist");
+        // window.location = "home.php";
+      }
+    }
+  }
+  r.open("GET", "addToWatchlistProcess.php?pid=" + pId, true);
+  r.send();
+}
+
 function removefromWatchlist(id) {
   // alert(id);
   let r = new XMLHttpRequest();
@@ -752,6 +775,23 @@ function addToCart(id) {
   r.send();
 }
 
+function addToCartSpView(id) {
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      if (t == "New Product added to the cart") {
+        // window.location = "singleProductView.php";
+      } else {
+        alert(t);
+      }
+    }
+  }
+
+  r.open("GET", "addToCartProcess.php?pid=" + id, true);
+  r.send();
+}
+
 function removeFromCart(id) {
   let r = new XMLHttpRequest();
   r.onreadystatechange = function () {
@@ -767,3 +807,15 @@ function removeFromCart(id) {
   r.send();
 }
 // Cart
+
+// invoice
+function printInvoice() {
+
+  var page = document.getElementById("page").innerHTML;
+  var restorePage = document.body.innerHTML;
+  document.body.innerHTML = page;
+  window.print();
+  document.body.innerHTML = restorePage;
+
+}
+// invoice

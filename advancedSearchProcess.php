@@ -10,10 +10,10 @@ $priceFrom = $_POST["priceFrom"];
 $priceTo = $_POST["priceTo"];
 
 $query = "SELECT * FROM `product`";
-$status = 1;
+$status = 0;
 
 if (!empty($search)) {
-    $query .= " WHERE `productName` LIKE '%" . $search_txt . "%'";
+    $query .= " WHERE `productName` LIKE '%" . $search . "%'";
     $status = 1;
 }
 if ($category != 0 && $status == 0) {
@@ -40,30 +40,30 @@ if ($type != 0 && $status == 0) {
 
 if (!empty($priceFrom) && empty($priceTo)) {
     if ($status == 0) {
-        $query .= "WHERE `price` >= '" . $priceFrom . "'";
+        $query .= " WHERE `price` >= '" . $priceFrom . "'";
         $status = 1;
     } else if ($status == 1) {
-        $query .= "AND `price` >= '" . $priceFrom . "'";
+        $query .= " AND `price` >= '" . $priceFrom . "'";
     }
 } else if (empty($priceFrom) && !empty($priceTo)) {
     if ($status == 0) {
-        $query .= "WHERE `price` >= '" . $priceTo . "'";
+        $query .= " WHERE `price` >= '" . $priceTo . "'";
         $status = 1;
     } else if ($status == 1) {
-        $query .= "AND `price` >= '" . $priceTo . "'";
+        $query .= " AND `price` >= '" . $priceTo . "'";
     }
 } else if (!empty($priceFrom) && !empty($priceTo)) {
     if ($status == 0) {
-        $query .= "WHERE `price` BETWEEN '" . $priceFrom . "' AND '" . $priceTo . "'";
+        $query .= " WHERE `price` BETWEEN '" . $priceFrom . "' AND '" . $priceTo . "'";
         $status = 1;
     } else if ($status == 1) {
-        $query .= "AND `price` BETWEEN '" . $priceFrom . "' AND '" . $priceTo . "'";
+        $query .= " AND `price` BETWEEN '" . $priceFrom . "' AND '" . $priceTo . "'";
     }
 }
 
 if (!empty($search)) {
 
-    $query .= " WHERE `title` LIKE '%" . $search . "%' ORDER BY `price` DESC";
+    $query .= " WHERE `productName` LIKE '%" . $search . "%' ORDER BY `price` DESC";
     $status = 1;
 }
 ?>
@@ -88,20 +88,24 @@ $query .= " LIMIT " . $results_per_page . " OFFSET " . $viewed_results_count . "
 $results_rs = Database::search($query);
 $results_num = $results_rs->num_rows;
 
-while ($results_data = $results_rs->fetch_assoc()) {
 
+
+while ($results_data = $results_rs->fetch_assoc()) {
+    $pid = $results_data["id"];
+    $imgRs = Database::search("SELECT * FROM images WHERE product_id = '" . $pid . "' AND img_no = 1;");
+    $imgData = $imgRs->fetch_assoc();
 ?>
 
     <div class="col-7 col-sm-5 col-lg-3">
         <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
-            <img src='img/profilepic-bg.jpg' alt="shoe" class="img-fluid">
+            <img src='<?php echo $imgData["code"]; ?>' alt="shoe" class="img-fluid">
         </div>
         <div class="row p-2">
             <div class="col-10">
                 <?php echo $results_data["productName"]; ?>
             </div>
-            <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;">
-                <i class="bx bx-heart"></i>
+            <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $pid?>);">
+                <i class= " bx bx-heart"></i>
             </div>
         </div>
         <div class="row mx-1 p-2 price">
@@ -117,15 +121,15 @@ while ($results_data = $results_rs->fetch_assoc()) {
 }
 ?>
 
-<div class="offset-lg-4 col-12 col-lg-4 mb-3 text-center">
-    <div class="row">
+<div class="mt-4 offset-lg-4 col-12 col-lg-4 mb-3 text-center d-flex align-items-center justify-content-center">
+    <div class="row gap-2">
 
         <div class="pagination">
-            <a <?php if ($pageno <= 1) {
-                    echo "#";
-                } else {
-                ?> onclick="advancedSearch('<?php echo ($pageno - 1); ?>')" <?php
-                                                                        } ?>>&laquo;</a>
+            <a class="btn btn-primary mx-2" <?php if ($pageno <= 1) {
+                                                echo "#";
+                                            } else {
+                                            ?> onclick="advancedSearch('<?php echo ($pageno - 1); ?>')" <?php
+                                                                                                    } ?>>&laquo;</a>
 
             <?php
 
@@ -134,7 +138,7 @@ while ($results_data = $results_rs->fetch_assoc()) {
                 if ($page == $pageno) {
 
             ?>
-                    <a onclick="advancedSearch('<?php echo ($page); ?>')" class="active">
+                    <a class="btn btn-primary mx-2" onclick="advancedSearch('<?php echo ($page); ?>')" class="active">
                         <?php echo $page; ?>
                     </a>
                 <?php
@@ -142,7 +146,7 @@ while ($results_data = $results_rs->fetch_assoc()) {
                 } else {
 
                 ?>
-                    <a onclick="advancedSearch('<?php echo ($page); ?>')">
+                    <a class="btn btn-primary mx-2" onclick="advancedSearch('<?php echo ($page); ?>')">
                         <?php echo $page; ?>
                     </a>
             <?php
@@ -152,11 +156,11 @@ while ($results_data = $results_rs->fetch_assoc()) {
 
             ?>
 
-            <a <?php if ($pageno >= $number_of_pages) {
-                    echo "#";
-                } else {
-                ?> onclick="advancedSearch('<?php echo ($pageno + 1); ?>')" <?php
-                                                                        } ?>>&raquo;</a>
+            <a class="btn btn-primary mx-2" <?php if ($pageno >= $number_of_pages) {
+                                                echo "#";
+                                            } else {
+                                            ?> onclick="advancedSearch('<?php echo ($pageno + 1); ?>')" <?php
+                                                                                                    } ?>>&raquo;</a>
         </div>
 
     </div>
