@@ -50,7 +50,7 @@ if (empty($fname)) {
         $date->setTimezone($timeZone);
         $finalDate = $date->format("Y-m-d H:i:s");
 
-        Database::iud("INSERT INTO `user` (`first_name`,`last_name`,`email`,`contact_number`,`password`,`gender_id`,`register_date`) VALUES ('" . $fname . "','" . $lname . "','" . $email . "','" . $contact . "','" . $password . "','" . $gender . "','" . $finalDate . "')");
+        Database::iud("INSERT INTO `user` (`first_name`,`last_name`,`email`,`contact_number`,`password`,`gender_id`,`register_date`,`user_type_id`) VALUES ('" . $fname . "','" . $lname . "','" . $email . "','" . $contact . "','" . $password . "','" . $gender . "','" . $finalDate . "','1')");
 
         echo "Success";
     }
