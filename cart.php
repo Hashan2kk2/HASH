@@ -78,6 +78,11 @@
                             $productRs = Database::search("SELECT product.productName,category.name AS catName,`type`.name AS tName,product.price FROM product INNER JOIN category ON product.category_id = category.id INNER JOIN `type` ON product.type_id = `type`.id  WHERE product.id = '" . $cart_data["product_id"] . "'");
 
                             $product_data = $productRs->fetch_assoc();
+
+                            $imageRs = Database::search("SELECT images.code FROM images WHERE product_id = '" . $cart_data["product_id"] . "' AND images.img_no = '1'");
+
+                            $imageData = $imageRs->fetch_assoc();
+
                         ?>
                             <!-- cart cards -->
                             <div class="row justify-content-center py-2">
@@ -85,14 +90,14 @@
                                     <div class="row">
                                         <div class="col-4 align-items-center justify-content-center d-flex">
                                             <div class="cart-img-bx">
-                                                <img src="resources/product_img/63bb3184e7d89macos-catalina-mountains-island-sunny-day-stock-5k-6016x6016-4013.jpg" alt="">
+                                                <img src="<?php echo $imageData["code"] ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col-8">
                                             <!-- card title -->
                                             <div class="d-flex justify-content-between">
                                                 <h3><?php echo $product_data["productName"]; ?></h3>
-                                                <button style="background-color: white; border-radius: 4px; border: none; outline: none; width: 30px; height: 30px;"><i class='bx bxs-trash'></i></button>
+                                                <button onclick="removeFromCart(<?php echo $cart_data["product_id"]; ?>);" style="background-color: white; border-radius: 4px; border: none; outline: none; width: 30px; height: 30px;"><i class='bx bxs-trash'></i></button>
                                             </div>
                                             <p>Category : <span><?php echo $product_data["catName"]; ?></span></p>
                                             <p>Type : <span><?php echo $product_data["tName"]; ?></span></p>
@@ -124,19 +129,7 @@
                     </div>
                     <!-- chackout box -->
                     <div class="col-12 col-lg-5 mt-5 ms-4 ms-lg-0 justify-content-center align-items-center">
-                        <div class="row checkout-wrapper">
-                            <div class="col-12">
-                                <h1 class="mt-3">Total</h1>
-                            </div>
-                            <hr class="my-4">
-                            <div class="col-12 d-flex justify-content-between">
-                                <div class="h4">Sub Total</div>
-                                <div class="h4">Rs. 500.00</div>
-                            </div>
-                            <div class="col-12 d-flex justify-content-between">
-                                <div class="h4">Delivery</div>
-                                <div class="h4">Rs. 500.00</div>
-                            </div>
+                        <div class="row mt-2 checkout-wrapper">
                             <hr class="my-4">
                             <div class="col-12 checkout text-center">
                                 <button>Checkout</button>

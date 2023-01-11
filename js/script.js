@@ -688,4 +688,19 @@ function addToCart(id) {
   r.open("GET", "addToCartProcess.php?pid=" + id, true);
   r.send();
 }
+
+function removeFromCart(id) {
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      if (t == "success") {
+        alert("product Removed");
+        window.location = "cart.php";
+      }
+    }
+  }
+  r.open("GET", "removeFromCartProcess.php?id=" + id, true);
+  r.send();
+}
 // Cart
