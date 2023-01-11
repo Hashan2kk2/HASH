@@ -564,3 +564,131 @@
 
 
 /* User Profile */
+
+/* home page */
+.wishlist-card-btn i {
+    color: #315afc;
+}
+
+.wishlist-card-btn i:hover {
+    color: red;
+}
+
+/* home page */
+
+/* Product listing */
+.shw-advanced-search button {
+    background-color: #315afc;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.selections {
+    /* border: #000000 solid; */
+    justify-content: center;
+    display: flex;
+}
+
+.selections select,
+.searchBar input,
+.price-range input {
+    width: 100%;
+    border: #315afc solid 2px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.price-range input {
+    width: 100%;
+}
+
+.apply-btn button {
+    width: 100%;
+    border: #315afc solid 2px;
+    padding: 10px;
+    background-color: #315afc;
+    color: white;
+    border-radius: 8px;
+}
+
+.cancel-btn {
+    color: white;
+    background-color: crimson;
+    padding: 5px;
+    border-radius: 50px;
+    margin: 10px;
+    outline: none;
+    border: none;
+}
+
+/* Product listing */
+
+/* cart */
+.empty-cart-wrapper {
+    height: 400px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.empty-cart-wrapper i {
+    font-size: 100px;
+    padding-bottom: 25px;
+}
+
+.cart-card {
+    background-color: #f3f3f3;
+    border: #315afc solid 1px;
+    padding: 10px;
+    width: 95%;
+    border-radius: 8px;
+}
+
+.cart-card .cart-img-bx {
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: #315afc;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.cart-card .cart-img-bx img {
+    height: 100px;
+    width: 100px;
+}
+
+.checkout-wrapper{
+    background-color: #ffffff;
+    border: #000000 solid 1px;
+    width: 98%;
+    border-radius: 8px;
+}
+
+.checkout i{
+    font-size: 40px;
+    padding: 20px;
+}
+
+.checkout button{
+    background-color: #315afc;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.checkout i:hover{
+    color: #315afc;
+}
+
+/* cart */

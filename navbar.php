@@ -28,9 +28,9 @@ session_start();
 
 <body>
 
-<?php 
-require "connection.php";
-?>
+    <?php
+    require "connection.php";
+    ?>
 
     <!-- topbar -->
     <div class="container-fluid">
@@ -42,7 +42,7 @@ require "connection.php";
                     if (isset($_SESSION["userEmail"])) {
                         $user = $_SESSION["userEmail"]["first_name"];
                         $uid = $_SESSION["userEmail"]["id"];
-                        $urs = Database::search("SELECT * FROM `user` WHERE `id` = '".$uid."'");
+                        $urs = Database::search("SELECT * FROM `user` WHERE `id` = '" . $uid . "'");
                         $n = $urs->num_rows;
                         $udata = $urs->fetch_assoc();
                     ?>
@@ -123,20 +123,36 @@ require "connection.php";
                 </div>
             </div>
             <div class="col-lg-3 col-2 text-center h-100 gap-md-1 gap-md-3 d-flex">
-                <button class="navbtn text-center d-flex justify-content-center align-items-center">
+                <button class="navbtn text-center d-flex justify-content-center align-items-center" onclick="gotoCart();">
+                    <?php
+                    $cart = Database::search("SELECT COUNT(id) AS cartCount FROM cart WHERE user_id = '" . $uid . "'");
+                    $cartRs = $cart->fetch_assoc();
+                    ?>
                     <i class="fas fa-shopping-cart ps-2"></i>
-                    <span class="badge">0</span>
+                    <span class="badge"><?php echo $cartRs["cartCount"]; ?></span>
                 </button>
-                <button class="navbtn text-center d-flex justify-content-center align-items-center">
+                <button class="navbtn text-center d-flex justify-content-center align-items-center" onclick="gotoWatchlist();">
+                    <?php
+                    $watchlist = Database::search("SELECT COUNT(id) AS count FROM watchlist WHERE user_id = '" . $uid . "'");
+                    $watchlistRs = $watchlist->fetch_assoc();
+                    ?>
                     <i class="fas fa-heart ps-2"></i>
-                    <span class="badge">0</span>
+                    <span class="badge"><?php echo $watchlistRs["count"]; ?></span>
                 </button>
             </div>
         </div>
     </div>
     <!-- topdar -->
 
+    <script>
+        function gotoWatchlist() {
+            window.location = "watchlist.php";
+        }
 
+        function gotoCart() {
+            window.location = "cart.php";
+        }
+    </script>
 
 
 

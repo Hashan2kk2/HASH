@@ -600,3 +600,92 @@ function switchKids() {
   mentbtn.classList.remove("active");
   kidbtn.classList.add("active");
 }
+
+function homeViewMore(x) {
+  let typeId = x;
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = this.responseText();
+      alert(t);
+    }
+  }
+  r.open("GET", "productListing.php?tid=" + typeId, true);
+  r.send();
+}
+// watchlist
+function addtoWishList(id) {
+  let pId = id;
+
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      // alert(t);
+      if (t == "Please Sign in or Register") {
+        alert("Please Sign in or Register")
+      } else if (t == "removed") {
+        alert("Product Removed from the wishlist");
+        window.location = "home.php";
+      } else if (t == "added") {
+        alert("Product Added to the Wishlist");
+        window.location = "home.php";
+      }
+    }
+  }
+  r.open("GET", "addToWatchlistProcess.php?pid=" + pId, true);
+  r.send();
+}
+
+function removefromWatchlist(id) {
+  // alert(id);
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      alert(t);
+      window.location = "watchlist.php";
+    }
+  }
+  r.open("GET", "removeFromWatchlist.php?id=" + id, true);
+  r.send();
+}
+
+// wishlisht
+// advanced search
+function shwAdvancedSearch() {
+  let advancedSearchButton = document.getElementById("advancedSearchButton");
+  let advancedSearchForm = document.getElementById("advancedSearchForm");
+
+  advancedSearchButton.classList.add("d-none");
+  advancedSearchButton.classList.add("d-md-none");
+  advancedSearchForm.classList.remove("d-none");
+}
+
+function hideAdvancedSearch() {
+  let advancedSearchButton = document.getElementById("advancedSearchButton");
+  let advancedSearchForm = document.getElementById("advancedSearchForm");
+
+  advancedSearchButton.classList.remove("d-none");
+  advancedSearchButton.classList.remove("d-md-none");
+  advancedSearchForm.classList.add("d-none");
+}
+// advanced search
+// Cart
+function addToCart(id) {
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      if (t == "New Product added to the cart") {
+        window.location = "home.php";
+      } else {
+        alert(t);
+      }
+    }
+  }
+
+  r.open("GET", "addToCartProcess.php?pid=" + id, true);
+  r.send();
+}
+// Cart

@@ -49,7 +49,7 @@
                             <!-- product images -->
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6 ps-lg-5">
                         <div class="row my-4">
                             <div class="col-12 p-price">
                                 <span class="fs-3">Rs. 1920.00</span>

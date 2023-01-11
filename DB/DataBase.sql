@@ -2,14 +2,12 @@
 -- Host:                         127.0.0.1
 -- Server version:               8.0.26 - MySQL Community Server - GPL
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.2.0.6576
+-- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
@@ -27,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `brand` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.brand: ~10 rows (approximately)
+/*!40000 ALTER TABLE `brand` DISABLE KEYS */;
 INSERT INTO `brand` (`id`, `name`) VALUES
 	(1, 'Nike'),
 	(2, 'Adidas'),
@@ -38,6 +37,28 @@ INSERT INTO `brand` (`id`, `name`) VALUES
 	(8, 'Fila'),
 	(9, 'Athleta'),
 	(10, 'Lululemon');
+/*!40000 ALTER TABLE `brand` ENABLE KEYS */;
+
+-- Dumping structure for table final_project_webdev.cart
+CREATE TABLE IF NOT EXISTS `cart` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `qty` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_cart_product1_idx` (`product_id`),
+  KEY `fk_cart_user1_idx` (`user_id`),
+  CONSTRAINT `fk_cart_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `fk_cart_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table final_project_webdev.cart: ~0 rows (approximately)
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` (`id`, `product_id`, `user_id`, `qty`) VALUES
+	(5, 31, 3, 2),
+	(6, 30, 3, 1),
+	(7, 28, 3, 1);
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.category
 CREATE TABLE IF NOT EXISTS `category` (
@@ -47,12 +68,14 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.category: ~5 rows (approximately)
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `name`) VALUES
 	(1, 'Business Attire'),
 	(2, 'Casual Wear'),
 	(3, 'Formal Waer'),
 	(4, 'Sports Wear'),
 	(5, 'Childrens Wear');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.color
 CREATE TABLE IF NOT EXISTS `color` (
@@ -62,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `color` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.color: ~7 rows (approximately)
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
 INSERT INTO `color` (`id`, `name`) VALUES
 	(1, 'Blue'),
 	(2, 'Gray'),
@@ -70,6 +94,7 @@ INSERT INTO `color` (`id`, `name`) VALUES
 	(5, 'Black'),
 	(6, 'Red'),
 	(7, 'Orange');
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.gender
 CREATE TABLE IF NOT EXISTS `gender` (
@@ -79,9 +104,11 @@ CREATE TABLE IF NOT EXISTS `gender` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.gender: ~2 rows (approximately)
+/*!40000 ALTER TABLE `gender` DISABLE KEYS */;
 INSERT INTO `gender` (`id`, `name`) VALUES
 	(1, 'Male'),
 	(2, 'Female');
+/*!40000 ALTER TABLE `gender` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.images
 CREATE TABLE IF NOT EXISTS `images` (
@@ -94,7 +121,8 @@ CREATE TABLE IF NOT EXISTS `images` (
   CONSTRAINT `fk_images_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table final_project_webdev.images: ~40 rows (approximately)
+-- Dumping data for table final_project_webdev.images: ~56 rows (approximately)
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `code`, `product_id`, `img_no`) VALUES
 	(33, 'resources//product_img//63bb315ad6fdamacos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg', 14, 1),
 	(34, 'resources//product_img//63bb315ad6fdemacos-catalina-mountains-island-morning-foggy-stock-5k-6016x6016-4019.jpg', 14, 2),
@@ -140,7 +168,7 @@ INSERT INTO `images` (`id`, `code`, `product_id`, `img_no`) VALUES
 	(79, 'resources//product_img//63bd5b035e4e8adidas2.png', 28, 2),
 	(80, 'resources//product_img//63bd5b035e4e9adidas2.png', 28, 3),
 	(81, 'resources//product_img//63bd5b035e4eaadidas1.png', 28, 4),
-	(82, 'resources//product_img//63bd5b5c16ed7adidas1.png', 29, 1),
+	(82, 'resources//product_img//63bc122655a1aiphone-background-nature.jpg', 29, 1),
 	(83, 'resources//product_img//63bd5b5c16edcadidas2.png', 29, 2),
 	(84, 'resources//product_img//63bd5b5c16eddadidas1.png', 29, 3),
 	(85, 'resources//product_img//63bd5b5c16edeadidas2.png', 29, 4),
@@ -152,6 +180,7 @@ INSERT INTO `images` (`id`, `code`, `product_id`, `img_no`) VALUES
 	(91, 'resources//product_img//63bd5c0f15a57adidas2.png', 31, 2),
 	(92, 'resources//product_img//63bd5c0f15a58adidas2.png', 31, 3),
 	(93, 'resources//product_img//63bd5c0f15a59adidas1.png', 31, 4);
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.invoice
 CREATE TABLE IF NOT EXISTS `invoice` (
@@ -171,8 +200,10 @@ CREATE TABLE IF NOT EXISTS `invoice` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.invoice: ~0 rows (approximately)
+/*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
 INSERT INTO `invoice` (`id`, `order_id`, `user_id`, `product_id`, `date`, `total`, `qty`, `status`) VALUES
 	(1, '41245', 3, 21, '2023-01-09 05:13:53', 14000, 2, 1);
+/*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.product
 CREATE TABLE IF NOT EXISTS `product` (
@@ -201,7 +232,8 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `fk_product_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table final_project_webdev.product: ~15 rows (approximately)
+-- Dumping data for table final_project_webdev.product: ~19 rows (approximately)
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `price`, `qty`, `description`, `productName`, `date_added`, `delivery_fee`, `user_id`, `brand_id`, `status_id`, `type_id`, `category_id`) VALUES
 	(11, 123, 123, 'qwe', '123', '2022-03-12', 123, 4, 2, 1, 3, 1),
 	(12, 123, 123, 'this is the description', 'Product (M)', '2023-02-01', 123, 4, 2, 1, 2, 1),
@@ -222,6 +254,7 @@ INSERT INTO `product` (`id`, `price`, `qty`, `description`, `productName`, `date
 	(29, 400, 40, 'Product Description', 'Kids Product', '2023-03-24', 400, 4, 3, 1, 1, 5),
 	(30, 40, 10, 'Prod Description', 'Womans', '2023-03-24', 10, 4, 1, 1, 3, 3),
 	(31, 4000, 10, 'Description', 'Ladies', '2023-03-24', 200, 4, 3, 1, 2, 2);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.prof_img
 CREATE TABLE IF NOT EXISTS `prof_img` (
@@ -233,10 +266,12 @@ CREATE TABLE IF NOT EXISTS `prof_img` (
   CONSTRAINT `fk_prof_img_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table final_project_webdev.prof_img: ~0 rows (approximately)
+-- Dumping data for table final_project_webdev.prof_img: ~2 rows (approximately)
+/*!40000 ALTER TABLE `prof_img` DISABLE KEYS */;
 INSERT INTO `prof_img` (`id`, `code`, `user_id`) VALUES
 	(6, 'resources//profpic//63bd40c788872adidas1.png', 4),
 	(7, 'resources//profpic//63bd17c1bf53eextraction-valley-pc-games-3840x2400-854.jpg', 3);
+/*!40000 ALTER TABLE `prof_img` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.size
 CREATE TABLE IF NOT EXISTS `size` (
@@ -246,11 +281,13 @@ CREATE TABLE IF NOT EXISTS `size` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.size: ~4 rows (approximately)
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
 INSERT INTO `size` (`id`, `name`) VALUES
 	(1, 'Small'),
 	(2, 'Medium'),
 	(3, 'Large'),
 	(4, 'Extra Large');
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.status
 CREATE TABLE IF NOT EXISTS `status` (
@@ -260,9 +297,11 @@ CREATE TABLE IF NOT EXISTS `status` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.status: ~2 rows (approximately)
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
 INSERT INTO `status` (`id`, `name`) VALUES
 	(1, 'Available'),
 	(2, 'Unavailable');
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.type
 CREATE TABLE IF NOT EXISTS `type` (
@@ -272,10 +311,12 @@ CREATE TABLE IF NOT EXISTS `type` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.type: ~3 rows (approximately)
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
 INSERT INTO `type` (`id`, `name`) VALUES
 	(1, 'Kids'),
 	(2, 'Men'),
 	(3, 'Woman');
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.user
 CREATE TABLE IF NOT EXISTS `user` (
@@ -296,11 +337,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `fk_user_user_type1` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table final_project_webdev.user: ~3 rows (approximately)
+-- Dumping data for table final_project_webdev.user: ~0 rows (approximately)
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `register_date`, `gender_id`, `verification_code`, `user_type_id`) VALUES
 	(2, 'Hashan', 'Lakruwan', 'hashan@gmail.com', '0771433565', '12345', '2022-08-24 18:11:25', 1, 'HASH_6341913fcf5bd', 1),
 	(3, 'Hashan', 'Lakruwan', 'hashan.lakruwan22@gmail.com', '0757769990', 'Hashan223344', '2022-10-30 12:15:39', 1, 'HASH_63bd16ffea595', 1),
 	(4, 'Hashan Lakruwan', 'Bamunuarachchi', 'hashan.lakruwan2020@gmail.com', '0771433562', 'Hashan123321123', '2022-11-01 16:11:29', 1, 'HASH_6360fabb31d49', 2);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.user_has_address
 CREATE TABLE IF NOT EXISTS `user_has_address` (
@@ -316,12 +359,14 @@ CREATE TABLE IF NOT EXISTS `user_has_address` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.user_has_address: ~5 rows (approximately)
+/*!40000 ALTER TABLE `user_has_address` DISABLE KEYS */;
 INSERT INTO `user_has_address` (`id`, `line1`, `line2`, `city`, `postal_code`, `user_id`) VALUES
 	(1, '483', 'Dadugama', 'Ja Ela', '11350', 0),
 	(2, '457', 'Kadirana', 'Negombo', '11350', 0),
 	(3, '78', 'asad', 'asdas', '11350', 0),
 	(4, '483', 'Dadugama', 'JaEla', '11350', 4),
 	(5, '438', 'Dadugama', 'Ja Ela', '11350', 3);
+/*!40000 ALTER TABLE `user_has_address` ENABLE KEYS */;
 
 -- Dumping structure for table final_project_webdev.user_type
 CREATE TABLE IF NOT EXISTS `user_type` (
@@ -331,11 +376,34 @@ CREATE TABLE IF NOT EXISTS `user_type` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table final_project_webdev.user_type: ~2 rows (approximately)
+/*!40000 ALTER TABLE `user_type` DISABLE KEYS */;
 INSERT INTO `user_type` (`id`, `name`) VALUES
 	(1, 'customer'),
 	(2, 'admin');
+/*!40000 ALTER TABLE `user_type` ENABLE KEYS */;
 
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+-- Dumping structure for table final_project_webdev.watchlist
+CREATE TABLE IF NOT EXISTS `watchlist` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_watchlist_product1_idx` (`product_id`),
+  KEY `fk_watchlist_user1_idx` (`user_id`),
+  CONSTRAINT `fk_watchlist_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `fk_watchlist_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table final_project_webdev.watchlist: ~0 rows (approximately)
+/*!40000 ALTER TABLE `watchlist` DISABLE KEYS */;
+INSERT INTO `watchlist` (`id`, `product_id`, `user_id`) VALUES
+	(24, 18, 3),
+	(25, 21, 3),
+	(26, 31, 3),
+	(27, 30, 3),
+	(28, 15, 3);
+/*!40000 ALTER TABLE `watchlist` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

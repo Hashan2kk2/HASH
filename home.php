@@ -137,7 +137,7 @@
         <div class="row d-flex justify-content-center my-3 gap-1">
             <div class="col-5 text-center col-md-2 selection active" id="latestbtn" onclick="switchLatest();">Latest</div>
             <div class="col-5 text-center col-md-2 selection" id="mentbtn" onclick="switchMens();">For Mens</div>
-            <div class="col-5 text-center col-md-2 selection"id="womanbtn" onclick="switchWomans();">For Womans</div>
+            <div class="col-5 text-center col-md-2 selection" id="womanbtn" onclick="switchWomans();">For Womans</div>
             <div class="col-5 text-center col-md-2 selection" id="kidbtn" onclick="switchKids();">For Kids</div>
         </div>
         <!-- Selection -->
@@ -146,21 +146,21 @@
         <div class="row g-2 d-flex justify-content-center" id="latest">
             <?php
 
-            $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
+            $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
             $prodNr = $prod->num_rows;
             for ($i = 0; $i < $prodNr; $i++) {
                 $prodRs = $prod->fetch_assoc();
                 // echo $prodRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
                         <img src='<?php echo $prodRs["code"]; ?>' alt="shoe" class="img-fluid">
                     </div>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $prodRs["productName"]; ?>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $prodRs["id"]; ?>);">
                             <i class="bx bx-heart"></i>
                         </div>
                     </div>
@@ -168,8 +168,8 @@
                         <div class="col-10 text-white">
                             <?php echo $prodRs["price"] . '.00'; ?>
                         </div>
-                        <div class="col-2 text-center text-white">
-                            <i class='bx bxs-message-square-add fs-4'></i>
+                        <div onclick="addToCart(<?php echo $prodRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                            <i class='bx bx-cart-alt fs-4'></i>
                         </div>
                     </div>
                 </div>
@@ -177,6 +177,9 @@
             }
 
             ?>
+            <div class="col-12 text-end">
+                <a href="productListing.php?tid=<?php echo "0"; ?>" class="text-decoration-none fs-6">View More</a>
+            </div>
         </div>
         <!-- latest Products -->
 
@@ -184,21 +187,21 @@
         <div class="row g-2 d-flex justify-content-center d-none" id="forMen">
             <?php
 
-            $men = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 2 ORDER BY id LIMIT 4");
+            $men = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 2 ORDER BY id LIMIT 4");
             $menNr = $men->num_rows;
             for ($i = 0; $i < $menNr; $i++) {
                 $menRs = $men->fetch_assoc();
                 // echo $menRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
                         <img src='<?php echo $menRs["code"]; ?>' alt="shoe" class="img-fluid">
                     </div>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $menRs["productName"]; ?>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $menRs["id"]; ?>);">
                             <i class="bx bx-heart"></i>
                         </div>
                     </div>
@@ -215,13 +218,16 @@
             }
 
             ?>
+            <div class="col-12 text-end">
+                <a href="productListing.php?tid=<?php echo "2"; ?>" class="text-decoration-none fs-6">View More</a>
+            </div>
         </div>
         <!-- mens Products -->
         <!-- woman Products -->
         <div class="row g-2 d-flex justify-content-center d-none" id="forWoman">
             <?php
 
-            $ladies = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 3 ORDER BY id LIMIT 4");
+            $ladies = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 3 ORDER BY id LIMIT 4");
             $ladiesNr = $ladies->num_rows;
             // echo $ladiesNr;
             for ($i = 0; $i < $ladiesNr; $i++) {
@@ -229,14 +235,14 @@
                 // echo $ladiesRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
                         <img src='<?php echo $ladiesRs["code"]; ?>' alt="shoe" class="img-fluid">
                     </div>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $ladiesRs["productName"]; ?>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $ladiesRs["id"]; ?>);">
                             <i class="bx bx-heart"></i>
                         </div>
                     </div>
@@ -253,13 +259,16 @@
             }
 
             ?>
+            <div class="col-12 text-end">
+                <a href="productListing.php?tid=<?php echo "3"; ?>" class="text-decoration-none fs-6">View More</a>
+            </div>
         </div>
         <!-- woman Products -->
         <!-- woman Products -->
         <div class="row g-2 d-flex justify-content-center d-none" id="forKids">
             <?php
 
-            $kids = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 1 ORDER BY id LIMIT 4");
+            $kids = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 1 ORDER BY id LIMIT 4");
             $kidsNr = $kids->num_rows;
             // echo $kidsNr;
             for ($i = 0; $i < $kidsNr; $i++) {
@@ -267,14 +276,14 @@
                 // echo $kidsRs["code"];
             ?>
                 <div class="col-7 col-sm-5 col-lg-3">
-                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px;">
+                    <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
                         <img src='<?php echo $kidsRs["code"]; ?>' alt="shoe" class="img-fluid">
                     </div>
                     <div class="row p-2">
                         <div class="col-10">
                             <?php echo $kidsRs["productName"]; ?>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $kidsRs["id"]; ?>);">
                             <i class="bx bx-heart"></i>
                         </div>
                     </div>
@@ -287,10 +296,14 @@
                         </div>
                     </div>
                 </div>
+
             <?php
             }
 
             ?>
+            <div class="col-12 text-end">
+                <a href="productListing.php?tid=<?php echo "1"; ?>" class="text-decoration-none fs-6">View More</a>
+            </div>
         </div>
         <!-- woman Products -->
 
@@ -301,6 +314,8 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
     <!-- custom js -->
