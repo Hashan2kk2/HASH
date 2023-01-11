@@ -27,77 +27,151 @@ if (isset($_GET["tid"])) {
     <?php
 
     // require "connection.php";
-    require "navbar.php";
-
-    ?>
+    require "navbar.php"; ?>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center my-3">
-                <h1 class="h3">Womans Dresses</h1>
-            </div>
-            <!-- show advanced search button -->
-            <div class="col-12 pb-3 text-center text-md-end justify-content-md-center d-flex d-md-block shw-advanced-search" id="advancedSearchButton">
-                <button class=" me-md-5" onclick="shwAdvancedSearch();">Advanced Search</button>
-            </div>
-            <!-- show advanced search button -->
-            <div class="col-12 advanced-search d-none" id="advancedSearchForm">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 text-end">
-                        <button onclick="hideAdvancedSearch();" class="cancel-btn"><i class='bx bx-x-circle'></i></button>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-12 my-2 col-lg-6 d-block text-center searchBar">
-                        <input type="text" placeholder="Search for your product..." class="ms-3" style="width:95%;">
-                    </div>
-                    <br>
-                    <!-- brand
-                    category
-                    type
-                    price -->
-                    <div class="col-12 my-2 col-lg-6 d-block">
-                        <div class="row">
-                            <div class="selections py-2 py-md-0 col-12 col-md-4">
-                                <select name="brand" id="advncd-brand">
-                                    <option value="0">Brand</option>
-                                    <option>Nike</option>
-                                </select>
-                            </div>
-                            <div class="selections py-2 py-md-0 col-12 col-md-4">
-                                <select name="category" id="advncd-category">
-                                    <option value="0">Category</option>
-                                    <option>Nike</option>
-                                </select>
-                            </div>
-                            <div class="selections py-2 py-md-0 col-12 col-md-4">
-                                <select name="type" id="advncd-type">
-                                    <option value="0">Type</option>
-                                    <option>Nike</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row py-3 price-range justify-content-center">
-                            <div class="col-12 col-md-3 my-2 my-md-0 offset-md-1 align-items-center d-flex">
-                                <span>Price Range</span>
-                            </div>
-                            <div class="col-md-3 my-2 my-md-0 text-center align-items-center d-flex">
-                                <input type="number">
-                            </div>
-                            <div class="col-1 text-center text-md-center align-items-center d-flex">
-                                <span>to</span>
-                            </div>
-                            <div class="col-md-3 my-2 my-md-0 align-items-center d-flex">
-                                <input type="number">
-                            </div>
-                        </div>
-                        <div class="row py-3 apply-btn">
-                            <button>Search</button>
-                        </div>
-                    </div>
+
+        <?php
+
+        if ($typeId == 0) {
+            $productRs = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC");
+            $pNr = $productRs->num_rows;
+        ?>
+            <div class="row">
+                <div class="col-12 text-center my-3">
+                    <h1 class="h3">Latest Products</h1>
                 </div>
             </div>
-        </div>
+            <div class="row g-2 d-flex justify-content-center" id="latest">
+                <?php
+
+                for ($i = 0; $i < $pNr; $i++) {
+                    $productData = $productRs->fetch_assoc();
+
+                ?>
+                    <div class="col-7 col-sm-5 col-lg-3">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
+                            <img src='<?php echo $productData["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-10">
+                                <?php echo $productData["productName"]; ?>
+                            </div>
+                            <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $productData["id"]; ?>);">
+                                <i class="bx bx-heart"></i>
+                            </div>
+                        </div>
+                        <div class="row mx-1 p-2 price">
+                            <div class="col-10 text-white">
+                                <?php echo $productData["price"] . '.00'; ?>
+                            </div>
+                            <div onclick="addToCart(<?php echo $productData["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                                <i class='bx bx-cart-alt fs-4'></i>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+
+                ?>
+            </div>
+        <?php
+        } else if ($typeId == 1) {
+            $kidsRs = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 1 ORDER BY id DESC");
+            $kNr = $kidsRs->num_rows;
+        ?>
+            <div class="row">
+                <div class="col-12 text-center my-3">
+                    <h1 class="h3">Kids Products</h1>
+                </div>
+            </div>
+            <div class="row g-2 d-flex justify-content-center" id="latest">
+                <?php
+
+                for ($i = 0; $i < $kNr; $i++) {
+                    $kidsData = $kidsRs->fetch_assoc();
+
+                ?>
+                    <div class="col-7 col-sm-5 col-lg-3">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
+                            <img src='<?php echo $kidsData["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-10">
+                                <?php echo $kidsData["productName"]; ?>
+                            </div>
+                            <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $kidsData["id"]; ?>);">
+                                <i class="bx bx-heart"></i>
+                            </div>
+                        </div>
+                        <div class="row mx-1 p-2 price">
+                            <div class="col-10 text-white">
+                                <?php echo $kidsData["price"] . '.00'; ?>
+                            </div>
+                            <div onclick="addToCart(<?php echo $kidsData["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                                <i class='bx bx-cart-alt fs-4'></i>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+
+                ?>
+            </div>
+        <?php
+        } else if ($typeId == 2) {
+            $mensRs = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 2 ORDER BY id DESC");
+            $mNr = $mensRs->num_rows;
+        ?>
+            <div class="row">
+                <div class="col-12 text-center my-3">
+                    <h1 class="h3">Mens Products</h1>
+                </div>
+            </div>
+            <div class="row g-2 d-flex justify-content-center" id="latest">
+                <?php
+
+                for ($i = 0; $i < $mNr; $i++) {
+                    $mensData = $mensRs->fetch_assoc();
+
+                ?>
+                    <div class="col-7 col-sm-5 col-lg-3">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
+                            <img src='<?php echo $mensData["code"]; ?>' alt="shoe" class="img-fluid">
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-10">
+                                <?php echo $mensData["productName"]; ?>
+                            </div>
+                            <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $mensData["id"]; ?>);">
+                                <i class="bx bx-heart"></i>
+                            </div>
+                        </div>
+                        <div class="row mx-1 p-2 price">
+                            <div class="col-10 text-white">
+                                <?php echo $mensData["price"] . '.00'; ?>
+                            </div>
+                            <div onclick="addToCart(<?php echo $mensData["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                                <i class='bx bx-cart-alt fs-4'></i>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+
+                ?>
+            </div>
+        <?php
+        } else if ($typeId == 3) {
+        ?>
+            <div class="row">
+                <div class="col-12 text-center my-3">
+                    <h1 class="h3">Womans Products</h1>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 
     <?php
