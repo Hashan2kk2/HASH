@@ -101,7 +101,9 @@
                                             </div>
                                             <p>Category : <span><?php echo $product_data["catName"]; ?></span></p>
                                             <p>Type : <span><?php echo $product_data["tName"]; ?></span></p>
-                                            <button class="btn btn-primary">View Product</button>
+                                            <a href="<?php echo "singleProductView.php?pid='" . $cart_data["product_id"] . "'"; ?>">
+                                                <button class="btn btn-primary">View Product</button>
+                                            </a>
                                             <!-- card title -->
                                             <p></p>
                                         </div>
@@ -132,7 +134,9 @@
                         <div class="row mt-2 checkout-wrapper">
                             <hr class="my-4">
                             <div class="col-12 checkout text-center">
-                                <button>Checkout</button>
+                                <a href="invoice.php">
+                                    <button>Checkout</button>
+                                </a>
                                 <div>We Accept</div>
                                 <div>
 

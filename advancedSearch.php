@@ -36,7 +36,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 my-2 col-lg-6 d-block text-center searchBar d-block">
-                <input type="text" placeholder="Search for your product..." class="ms-3" style="width:100%;" id="search">
+                <input type="text" disabled placeholder="Search for your product..." class="ms-3" style="width:100%;" id="search">
             </div>
             <br>
             <!-- brand
@@ -102,7 +102,7 @@
                         <span>to</span>
                     </div>
                     <div class="col-md-3 my-2 my-md-0 align-items-center d-flex">
-                        <input type="number" id="priceTo">
+                        <input type="number" id="priceTo" onkeyup="advancedSearch(0);">
                     </div>
                 </div>
                 <hr>

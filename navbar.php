@@ -98,9 +98,9 @@ session_start();
         <div class="row">
             <div class="col-12 bottom-nav">
                 <a href="home.php">Home</a>
-                <a href="#">Shop</a>
+                <a href="productList.php">Shop</a>
                 <a href="advancedSearch.php">Advanced</a>
-                <a href="#">Pricing</a>
+                <!-- <a href="#">Pricing</a> -->
             </div>
         </div>
         <!-- </div> -->
