@@ -432,6 +432,7 @@ function upSaveChanges() {
         upCity.setAttribute("readonly", "");
         upPostalCode.setAttribute("readonly", "");
         upCnfrmPassword.setAttribute("readonly", "");
+        window.location = "userProfile.php";
       } else {
         alert(t);
       }
@@ -669,6 +670,68 @@ function hideAdvancedSearch() {
   advancedSearchButton.classList.remove("d-none");
   advancedSearchButton.classList.remove("d-md-none");
   advancedSearchForm.classList.add("d-none");
+}
+
+// function advancedSearch(x) {
+
+//   let search = document.getElementById("search");
+//   let brand = document.getElementById("brand");
+//   let category = document.getElementById("category");
+//   let type = document.getElementById("type");
+//   let priceFrom = document.getElementById("priceFrom");
+//   let priceTo = document.getElementById("priceTo");
+
+//   let form = new FormData();
+//   form.append("page", x);
+//   form.append("search", search.value);
+//   form.append("brand", brand.value);
+//   form.append("category", category.value);
+//   form.append("type", type.value);
+//   form.append("priceFrom", priceFrom.value);
+//   form.append("priceTo", priceTo.value);
+
+//   let r = new XMLHttpRequest();
+
+//   r.onreadystatechange = function () {
+//     if (r.readyState == 4) {
+//       let t = r.responseText;
+//       // document.getElementById("view_area").innerHTML = t;
+//       alert(t);
+//     }
+//   }
+
+//   r.open("POST", "advancedSearchProcess.php", true);
+//   r.send(form);
+// }
+
+function advancedSearch(x) {
+
+  let search = document.getElementById("search");
+  let brand = document.getElementById("advncd-brand");
+  let category = document.getElementById("advncd-category");
+  let type = document.getElementById("advncd-type");
+  let priceFrom = document.getElementById("priceFrom");
+  let priceTo = document.getElementById("priceTo");
+
+  let form = new FormData();
+  form.append("page", x);
+  form.append("search", search.value);
+  form.append("brand", brand.value);
+  form.append("category", category.value);
+  form.append("type", type.value);
+  form.append("priceFrom", priceFrom.value);
+  form.append("priceTo", priceTo.value);
+
+  let r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      let t = r.responseText;
+      // alert(t);
+      document.getElementById("view_area").innerHTML = t;
+    }
+  }
+  r.open("POST", "advancedSearchProcess.php", true);
+  r.send(form);
 }
 // advanced search
 // Cart

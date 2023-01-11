@@ -99,7 +99,7 @@ session_start();
             <div class="col-12 bottom-nav">
                 <a href="#">Home</a>
                 <a href="#">Shop</a>
-                <a href="#">Featured</a>
+                <a href="#">Advanced</a>
                 <a href="#">Pricing</a>
             </div>
         </div>

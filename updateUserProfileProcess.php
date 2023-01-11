@@ -98,5 +98,5 @@ if (empty($fName)) {
         }
     }
 
-    echo "updated successfully";
+    echo "ok";
 }
