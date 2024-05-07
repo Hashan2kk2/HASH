@@ -152,7 +152,25 @@ function passwordReset() {
     r.onreadystatechange = function() {
         if (r.readyState == 4) {
             let text = r.responseText;
-            alert(text);
+            if (text == "success") {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: ("Verification Code Sent to Your Entered Email Address"),
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                window.location = "verificationCode.php";
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: (text),
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                email.value = "";
+            }
         }
     }
 
@@ -160,5 +178,85 @@ function passwordReset() {
     r.send();
 
 }
+
+// verification code timer
+let countdowntimer = document.getElementById("countdowntimer");
+
+function verificationTimer() {
+    let count = 10;
+    let start = setInterval(c, 1000);
+
+    function c() {
+        if (count == 0) {
+            countdowntimer.innerHTML = "Time Out";
+            clearInterval(start);
+            window.location = "forgotPassword.php";
+        } else {
+            count--;
+            countdowntimer.innerHTML = count;
+        }
+    }
+}
+
+function stop() {
+    clearInterval(start);
+}
+
+function resetPassword() {
+
+    let code = document.getElementById("verificationCode");
+    let newPwBox = document.getElementById("newPasswordInput");
+    let vcCodeBox = document.getElementById("verificationCodeInput");
+
+
+    var formData = new FormData();
+
+    // edge2kk2@gmail.com
+    formData.append("code", code.value);
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function() {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == "succeess") {
+                stop();
+                vcCodeBox.classList.toggle("d-none");
+                newPwBox.classList.toggle("d-none");
+            } else {
+                alert(t);
+            }
+        }
+    }
+
+    r.open("POST", "resetPasswordProcess.php", true);
+    r.send(formData);
+}
+
+function switchPwType1() {
+    let icon = document.getElementById("togglePassword1");
+    let pw = document.getElementById("password1");
+    icon.classList.toggle("fa-eye-slash");
+    icon.classList.toggle("fa-eye");
+
+    if (pw.type === "password") {
+        pw.type = "text";
+    } else {
+        pw.type = "password";
+    }
+}
+
+function switchPwType2() {
+    let icon = document.getElementById("togglePassword2");
+    let pw = document.getElementById("password2");
+    icon.classList.toggle("fa-eye-slash");
+    icon.classList.toggle("fa-eye");
+
+    if (pw.type === "password") {
+        pw.type = "text";
+    } else {
+        pw.type = "password";
+    }
+}
+
 
 // ====================================
