@@ -56,11 +56,13 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -138,7 +140,8 @@
 
         <!-- Selection -->
         <div class="row d-flex justify-content-center my-3 gap-1">
-            <div class="col-5 text-center col-md-2 selection active" id="latestbtn" onclick="switchLatest();">Latest</div>
+            <div class="col-5 text-center col-md-2 selection active" id="latestbtn" onclick="switchLatest();">Latest
+            </div>
             <div class="col-5 text-center col-md-2 selection" id="mentbtn" onclick="switchMens();">For Mens</div>
             <div class="col-5 text-center col-md-2 selection" id="womanbtn" onclick="switchWomans();">For Womans</div>
             <div class="col-5 text-center col-md-2 selection" id="kidbtn" onclick="switchKids();">For Kids</div>
@@ -147,34 +150,47 @@
 
         <!-- latest Products -->
         <div class="row g-2 d-flex justify-content-center" id="latest">
-            <?php
 
-            $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
-            $prodNr = $prod->num_rows;
-            for ($i = 0; $i < $prodNr; $i++) {
-                $prodRs = $prod->fetch_assoc();
-                // echo $prodRs["code"];
-            ?>
-                <div class="col-7 col-sm-5 col-lg-3">
-                    <a href="<?php echo "singleProductView.php?pid='" . $prodRs["id"] . "'"; ?>">
-                        <div onclick="viewProduct(<?php echo $prodRs["id"]; ?>);" class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
-                            <img src='<?php echo $prodRs["code"]; ?>' alt="shoe" class="img-fluid">
+            <div class="col d-flex align-items-center justify-content-center flex-wrap">
+                <?php
+
+                $prod = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 ORDER BY id DESC LIMIT 4");
+                $prodNr = $prod->num_rows;
+                for ($i = 0; $i < $prodNr; $i++) {
+                    $prodRs = $prod->fetch_assoc();
+                    // echo $prodRs["code"];
+                    ?>
+                    <div
+                        style="width: 260px; height: 300px; margin: 20px; display: flex; justify-content: center; padding-top: 10px; flex-direction: column; border: 1px solid #dddddd; background: #ffffff; background: -webkit-linear-gradient(0deg, #ffffff 0%, #f0efef 100%); background: linear-gradient(0deg, #ffffff 0%, #f0efef 100%); border-radius: 10px;">
+                        <a href="<?php echo "singleProductView.php?pid='" . $prodRs["id"] . "'"; ?>"
+                            class="d-flex align-items-center justify-content-center"
+                            style="height: 180px; aspect-ratio: 1/1; overflow: hidden;">
+                            <img src="<?php echo $prodRs["code"]; ?>"
+                                style="height: 180px; object-fit: contain; object-position: center;" alt="">
+                        </a>
+                        <div class="text-start mt-2">
+                            <h5 class="text-dark text-start ps-2" style="font-size: 15px;">
+                                <?php echo $prodRs["productName"]; ?>
+                            </h5>
                         </div>
-                    </a>
-                    <div class="row p-2">
-                        <div class="col-10">
-                            <?php echo $prodRs["productName"]; ?>
-                        </div>
-                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $prodRs["id"]; ?>);">
-                            <i class="bx bx-heart"></i>
-                        </div>
-                    </div>
-                    <div class="row mx-1 p-2 price">
-                        <div class="col-10 text-white">
-                            <?php echo $prodRs["price"] . '.00'; ?>
-                        </div>
-                        <div onclick="addToCart(<?php echo $prodRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
-                            <i class='bx bx-cart-alt fs-4'></i>
+                        <hr class="border border-1" style="margin-top: 0px;">
+                        <div class="main-div d-flex" style="margin-top: -10px;">
+                            <div class="d-flex align-items-center justify-content-between ps-2 fw-normal"
+                                style=" width: calc(100% / 1.5); height: 50px;">
+                                <p class="my-auto" style="font-size: 14px;">Price
+                                    <br>LKR <?php echo $prodRs["price"] . '.00'; ?>
+                                </p>
+                            </div>
+                            <div class="d-flex wishlist-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i onclick="addtoWishList(<?php echo $prodRs['id']; ?>);" style="cursor: pointer;"
+                                    class="text-black-50 bi bi-heart fs-4"></i>
+                            </div>
+                            <div class="d-flex cart-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i style="cursor: pointer;" class='text-black-50 bi bi-bag fs-4'
+                                    onclick="addToCart(<?php echo $prodRs['id']; ?>);"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
