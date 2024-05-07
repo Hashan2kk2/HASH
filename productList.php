@@ -41,42 +41,57 @@ if (isset($_GET["tid"])) {
                 <h1 class="h3">Latest Products</h1>
             </div>
         </div>
-        <div class="row g-2 d-flex justify-content-center" id="latest">
-            <?php
+        <div class="row g-2 justify-content-center" id="latest">
+            <div class="col col-lg-10 d-flex align-items-center justify-content-center flex-wrap">
+                <?php
 
-            for ($i = 0; $i < $pNr; $i++) {
-                $productData = $productRs->fetch_assoc();
+                for ($i = 0; $i < $pNr; $i++) {
+                    $productData = $productRs->fetch_assoc();
 
-            ?>
-                <div class="col-7 col-sm-5 col-lg-3">
-                    <a href="<?php echo "singleProductView.php?pid='" . $productData["id"] . "'"; ?>">
-                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; cursor: pointer; overflow: hidden;">
-                            <img src='<?php echo $productData["code"]; ?>' alt="shoe" class="img-fluid">
+                    ?>
+
+                    <div
+                        style="width: 260px; height: 300px; margin: 20px; display: flex; justify-content: center; padding-top: 10px; flex-direction: column; border: 1px solid #dddddd; background: #ffffff; background: -webkit-linear-gradient(0deg, #ffffff 0%, #f0efef 100%); background: linear-gradient(0deg, #ffffff 0%, #f0efef 100%); border-radius: 10px;">
+                        <a href="<?php echo "singleProductView.php?pid='" . $productData["id"] . "'"; ?>"
+                            class="d-flex align-items-center justify-content-center"
+                            style="height: 180px; aspect-ratio: 1/1; overflow: hidden;">
+                            <img src="<?php echo $productData["code"]; ?>"
+                                style="height: 180px; object-fit: contain; object-position: center;" alt="">
+                        </a>
+                        <div class="text-start mt-2">
+                            <h5 class="text-dark text-start ps-2" style="font-size: 15px;">
+                                <?php echo $productData["productName"]; ?>
+                            </h5>
                         </div>
-                    </a>
-                    <div class="row p-2">
-                        <div class="col-10">
-                            <?php echo $productData["productName"]; ?>
+                        <hr class="border border-1" style="margin-top: 0px;">
+                        <div class="main-div d-flex" style="margin-top: -10px;">
+                            <div class="d-flex align-items-center justify-content-between ps-2 fw-normal"
+                                style=" width: calc(100% / 1.5); height: 50px;">
+                                <p class="my-auto" style="font-size: 14px;">Price
+                                    <br>LKR <?php echo $productData["price"]; ?>.00
+                                </p>
+                            </div>
+                            <div class="d-flex wishlist-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i onclick="addtoWishList(<?php echo $productData['id']; ?>);" style="cursor: pointer;"
+                                    class="text-black-50 bi bi-heart fs-4"></i>
+                            </div>
+                            <div class="d-flex cart-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i style="cursor: pointer;" class='text-black-50 bi bi-bag fs-4'
+                                    onclick="addToCart(<?php echo $productData['id']; ?>);"></i>
+                            </div>
                         </div>
-                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $productData["id"]; ?>);">
-                            <i class="bx bx-heart"></i>
-                        </div>
+
                     </div>
-                    <div class="row mx-1 p-2 price">
-                        <div class="col-10 text-white">
-                            <?php echo $productData["price"] . '.00'; ?>
-                        </div>
-                        <div onclick="addToCart(<?php echo $productData["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
-                            <i class='bx bx-cart-alt fs-4'></i>
-                        </div>
-                    </div>
-                </div>
-            <?php
-            }
+                    <?php
+                }
 
-            ?>
+                ?>
+            </div>
         </div>
     </div>
+
 
     <?php
     require "footer.php";
