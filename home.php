@@ -374,6 +374,33 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $('.wishlist-btn').hover(function () {
+                $(this).css('background-color', '#f0f0f0');
+                $(this).children('i').addClass('bi-heart-fill');
+                $(this).children('i').removeClass('bi-heart');
+                $(this).children('i').css('color', '#000');
+            }, function () {
+                $(this).css('background-color', '#ffffff');
+                $(this).children('i').removeClass('bi-heart-fill');
+                $(this).children('i').addClass('bi-heart');
+            });
+
+            $('.cart-btn').hover(function () {
+                $(this).css('background-color', '#f0f0f0');
+                $(this).children('i').addClass('bi-bag-fill');
+                $(this).children('i').removeClass('bi-bag');
+            }, function () {
+                $(this).css('background-color', '#ffffff');
+                $(this).children('i').removeClass('bi-bag-fill');
+                $(this).children('i').addClass('bi-bag');
+            });
+        });
+    </script>
 
 
     <!-- custom js -->
