@@ -96,7 +96,57 @@
                 <span>Copyright &copy; 2022. Hashan Lakruwan</span>
             </div>
         </div>
-    </section>
+    </section> -->
+    <div class="container-fluid" style=" background: var(--background-color-dark);">
+        <div class="row justify-content-center">
+            <div class="col-10 col-xl-8 d-lg-flex " style="padding-top: 40px;">
+                <!-- logo and description -->
+                <div class="logoAndDesc col-lg-6 d-flex justify-content-center flex-column">
+                    <div class="logo d-flex justify-content-center">
+                        <img src="img/Asset 7.png" alt="HASH-Logo">
+                    </div>
+                    <div class="description text-center">
+                        <p>Step up your style game with HASH fashion store's trendy collection of clothing and
+                            accessories. Discover the latest fashion trends and elevate your wardrobe with our curated
+                            selection of high-quality pieces. Shop now and make a statement with HASH fashion store.</p>
+                    </div>
+                </div>
+                <!-- logo and description -->
+                <!-- about section -->
+                <div class="d-md-flex col-lg-6 justify-content-evenly">
+                    <div class="ps-lg-4 about d-flex justify-content-center">
+                        <div class="content">
+                            <h4 class="text-center text-md-start">Let Us Help You</h4>
+                            <a class="d-block text-center text-md-start" href="#">Your Account</a>
+                            <a class="d-block text-center text-md-start" href="#">Your Orders</a>
+                            <a class="d-block text-center text-md-start" href="#">Shipping Ratings and Policies</a>
+                            <a class="d-block text-center text-md-start" href="#">Manage Your Contacts and Devices</a>
+                            <a class="d-block text-center text-md-start" href="#">Help</a>
+                        </div>
+                    </div>
+                    <div class="ps-lg-4 about d-flex justify-content-center">
+                        <div class="content">
+                            <h4 class="text-center text-md-start">About</h4>
+                            <a class="d-block text-center text-md-start" href="#">Partners</a>
+                            <a class="d-block text-center text-md-start" href="#">Terms & Conditions</a>
+                            <a class="d-block text-center text-md-start" href="#">Cookie Statement</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- about section -->
+                <!-- seperator -->
+            </div>
+            <hr class="col-lg-12" style="border: 1px solid var(--text-color-light); margin: 40px 0;">
+            <!-- seperator -->
+            <!-- copy right -->
+            <div class="copyRight d-flex justify-content-center flex-column" style="margin-bottom: 40px;">
+                <h6 class="text-center" style="color: var(--text-color-secondary);">#HASH is an Online Fashion Store
+                </h6>
+                <span class="text-center" style="color: var(--text-color-secondary);">Copyright &copy;
+                    <?php echo date('Y'); ?>.</span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
