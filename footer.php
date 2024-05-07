@@ -25,9 +25,43 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+<style>
+    .logo img {
+        width: auto;
+        height: 40px;
+    }
+
+    .description {
+        margin-top: 20px;
+        color: var(--text-color-secondary);
+    }
+
+    .about {
+        margin-top: 20px;
+    }
+
+    .about .content a {
+        margin: 5px 0;
+        color: var(--text-color-light);
+        text-decoration: none;
+    }
+
+    .about .content h4 {
+        color: var(--text-color-light);
+        font-weight: var(--font-bold);
+    }
+
+    .about .content a:hover {
+        color: var(--primary-color);
+    }
+
+    .about .content a:nth-child(2) {
+        margin-top: 20px;
+    }
+</style>
 
 <body>
-    <section class="container-fluid">
+    <!-- <section class="container-fluid">
         <div class="row footer pt-3 text-center text-md-start">
             <div class="col-12 col-md-4 col-lg-6 my-3 sec1">
                 <div class="logo">
