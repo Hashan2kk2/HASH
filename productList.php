@@ -106,6 +106,31 @@ if (isset($_GET["tid"])) {
     <!-- custom js -->
     <script src="js/script.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('.wishlist-btn').hover(function () {
+                $(this).css('background-color', '#f0f0f0');
+                $(this).children('i').addClass('bi-heart-fill');
+                $(this).children('i').removeClass('bi-heart');
+                $(this).children('i').css('color', '#000');
+            }, function () {
+                $(this).css('background-color', '#ffffff');
+                $(this).children('i').removeClass('bi-heart-fill');
+                $(this).children('i').addClass('bi-heart');
+            });
+
+            $('.cart-btn').hover(function () {
+                $(this).css('background-color', '#f0f0f0');
+                $(this).children('i').addClass('bi-bag-fill');
+                $(this).children('i').removeClass('bi-bag');
+            }, function () {
+                $(this).css('background-color', '#ffffff');
+                $(this).children('i').removeClass('bi-bag-fill');
+                $(this).children('i').addClass('bi-bag');
+            });
+        });
+    </script>
+
 </body>
 
 </html>
