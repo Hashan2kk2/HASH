@@ -26,6 +26,56 @@
     src: url(../fonts/Monologue.ttf);
 }
 
+:root{
+    --primary-color: #315afc;
+    --secondary-color: #929aab;
+    --background-color: #f7f7f7;
+    --background-color-dark: #181b1b;
+    --border-color: #929aab;
+    /* text colors */
+    --text-color: #333;
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --text-color-secondary: #374A63;
+    /* font sizes */
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.75rem;
+    --h4-font-size: 1.5rem;
+    --h5-font-size: 1.25rem;
+    --h6-font-size: 1rem;
+    /* font weight */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-bold: 700;
+    /* padding */
+    --padding: 1rem;
+    --padding-x: 2rem;
+    --padding-y: 1rem;
+    /* margin */
+    --margin: 1rem;
+    --margin-x: 2rem;
+    --margin-y: 1rem;
+    /* border radius */
+    --border-radius: 0.25rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-sm: 0.2rem;
+    /* transition */
+    --transition: all 0.3s ease;
+    /* box shadow */
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* z index */
+    --z-fixed: 1000;
+    --z-modal: 1000;
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-toast: 1050;
+    --z-tooltip: 1070;
+}
+
 .ut-main {
     background-color: #ffffff;
 }
