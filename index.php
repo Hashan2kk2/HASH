@@ -153,6 +153,9 @@ session_start();
                             <div class="col-12 mt-3 text-center login">
                                 <span class="text-dark">Don't Have an Account? <a href="#" onclick="toggleView();">Register Now</a> </span>
                             </div>
+                            <div class="col-12 mt-3 text-center login">
+                                <button class="btn btn-primary"><a href="home.php" class="text-white">Goto Home Page</a></button>
+                            </div>
                         </div>
                     </div>
                     <!-- content box -->
