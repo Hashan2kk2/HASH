@@ -262,42 +262,55 @@
         <!-- mens Products -->
         <!-- woman Products -->
         <div class="row g-2 d-flex justify-content-center d-none" id="forWoman">
-            <?php
+            <div class="col d-flex align-items-center justify-content-center flex-wrap">
+                <?php
 
-            $ladies = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 3 ORDER BY id LIMIT 4");
-            $ladiesNr = $ladies->num_rows;
-            // echo $ladiesNr;
-            for ($i = 0; $i < $ladiesNr; $i++) {
-                $ladiesRs = $ladies->fetch_assoc();
-                // echo $ladiesRs["code"];
-            ?>
-                <div class="col-7 col-sm-5 col-lg-3">
-                    <a href="<?php echo "singleProductView.php?pid='" . $ladiesRs["id"] . "'"; ?>">
-                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
-                            <img src='<?php echo $ladiesRs["code"]; ?>' alt="shoe" class="img-fluid">
+                $ladies = Database::search("SELECT product.id ,product.productName, product.price,product.qty,product.description,product.delivery_fee, images.code,product.type_id AS tId FROM product INNER JOIN images ON product.id = images.product_id WHERE images.img_no = 1 AND product.type_id = 3 ORDER BY id LIMIT 4");
+                $ladiesNr = $ladies->num_rows;
+                // echo $ladiesNr;
+                for ($i = 0; $i < $ladiesNr; $i++) {
+                    $ladiesRs = $ladies->fetch_assoc();
+                    // echo $ladiesRs["code"];
+                    ?>
+                    <div
+                        style="width: 260px; height: 300px; margin: 20px; display: flex; justify-content: center; padding-top: 10px; flex-direction: column; border: 1px solid #dddddd; background: #ffffff; background: -webkit-linear-gradient(0deg, #ffffff 0%, #f0efef 100%); background: linear-gradient(0deg, #ffffff 0%, #f0efef 100%); border-radius: 10px;">
+                        <a href="<?php echo "singleProductView.php?pid='" . $ladiesRs["id"] . "'"; ?>"
+                            class="d-flex align-items-center justify-content-center"
+                            style="height: 180px; aspect-ratio: 1/1; overflow: hidden;">
+                            <img src="<?php echo $ladiesRs["code"]; ?>"
+                                style="height: 180px; object-fit: contain; object-position: center;" alt="">
+                        </a>
+                        <div class="text-start mt-2">
+                            <h5 class="text-dark text-start ps-2" style="font-size: 15px;">
+                                <?php echo $ladiesRs["productName"]; ?>
+                            </h5>
                         </div>
-                    </a>
-                    <div class="row p-2">
-                        <div class="col-10">
-                            <?php echo $ladiesRs["productName"]; ?>
+                        <hr class="border border-1" style="margin-top: 0px;">
+                        <div class="main-div d-flex" style="margin-top: -10px;">
+                            <div class="d-flex align-items-center justify-content-between ps-2 fw-normal"
+                                style=" width: calc(100% / 1.5); height: 50px;">
+                                <p class="my-auto" style="font-size: 14px;">Price
+                                    <br>LKR <?php echo $ladiesRs["price"] . '.00'; ?>
+                                </p>
+                            </div>
+                            <div class="d-flex wishlist-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i onclick="addtoWishList(<?php echo $ladiesRs['id']; ?>);" style="cursor: pointer;"
+                                    class="text-black-50 bi bi-heart fs-4"></i>
+                            </div>
+                            <div class="d-flex cart-btn align-items-center justify-content-center"
+                                style=" width: calc(100% / 6); height: 50px;">
+                                <i style="cursor: pointer;" class='text-black-50 bi bi-bag fs-4'
+                                    onclick="addToCart(<?php echo $ladiesdRs['id']; ?>);"></i>
+                            </div>
                         </div>
-                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $ladiesRs["id"]; ?>);">
-                            <i class="bx bx-heart"></i>
-                        </div>
-                    </div>
-                    <div class="row mx-1 p-2 price">
-                        <div class="col-10 text-white">
-                            <?php echo $ladiesRs["price"] . '.00'; ?>
-                        </div>
-                        <div onclick="addToCart(<?php echo $ladiesRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
-                            <i class='bx bx-cart-alt fs-4'></i>
-                        </div>
-                    </div>
-                </div>
-            <?php
-            }
 
-            ?>
+                    </div>
+                    <?php
+                }
+
+                ?>
+            </div>
             <div class="col-12 text-end">
                 <a href="productListing.php?tid=<?php echo "3"; ?>" class="text-decoration-none fs-6">View More</a>
             </div>
@@ -313,10 +326,11 @@
             for ($i = 0; $i < $kidsNr; $i++) {
                 $kidsRs = $kids->fetch_assoc();
                 // echo $kidsRs["code"];
-            ?>
+                ?>
                 <div class="col-7 col-sm-5 col-lg-3">
                     <a href="<?php echo "singleProductView.php?pid='" . $kidsRs["id"] . "'"; ?>">
-                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center" style="height: 310px; overflow: hidden;">
+                        <div class="p-2 border bg-light d-flex justify-content-center align-items-center"
+                            style="height: 310px; overflow: hidden;">
                             <img src='<?php echo $kidsRs["code"]; ?>' alt="shoe" class="img-fluid">
                         </div>
                     </a>
@@ -324,7 +338,9 @@
                         <div class="col-10">
                             <?php echo $kidsRs["productName"]; ?>
                         </div>
-                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist" style="cursor: pointer;" onclick="addtoWishList(<?php echo $kidsRs["id"]; ?>);">
+                        <div class="col-2 fs-4 wishlist-card-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Add to Wishlist" style="cursor: pointer;"
+                            onclick="addtoWishList(<?php echo $kidsRs["id"]; ?>);">
                             <i class="bx bx-heart"></i>
                         </div>
                     </div>
@@ -332,13 +348,14 @@
                         <div class="col-10 text-white">
                             <?php echo $kidsRs["price"] . '.00'; ?>
                         </div>
-                        <div onclick="addToCart(<?php echo $kidsRs["id"]; ?>);" class="col-2 text-center text-white" style="cursor: pointer;">
+                        <div onclick="addToCart(<?php echo $kidsRs["id"]; ?>);" class="col-2 text-center text-white"
+                            style="cursor: pointer;">
                             <i class='bx bx-cart-alt fs-4'></i>
                         </div>
                     </div>
                 </div>
 
-            <?php
+                <?php
             }
 
             ?>
